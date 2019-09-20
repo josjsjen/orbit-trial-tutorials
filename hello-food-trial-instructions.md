@@ -69,7 +69,7 @@ Next, navigate to the terminal window by clicking **Terminal** at the top bar an
 ```bash
 python train_driver.py
 ```
-Once it completes, you can see in `fitted_objects/` folder that a new model was created as a result of the training, with the name `model.pkl` unless you change the code
+You can ignore the warning messages in the terminal. Once it completes, you can see in `fitted_objects/` folder that a new model was created as a result of the training, with the name `model.pkl` unless you change the code
 
 **There is no Orbit magic so far. These are the things that you normally do in a typical data science project, but simplified for illustration purpose.**
 
