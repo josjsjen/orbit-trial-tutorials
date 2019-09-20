@@ -332,7 +332,7 @@ Please do the following on the GUI:
 * A modal should appear on the screen
 * Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-v3”
 * Under **Parameters**, enter the following:
- 
+
   | Key        | Value       |
   | -----------|-------------|
   | start_date | <start_date>|
