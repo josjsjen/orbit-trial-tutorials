@@ -43,6 +43,15 @@ Let’s imagine you work at a meal-kit subscription company, called **Hello, Foo
 
 First, let's open the code editor on a browser using the link that we sent you. 
 
+<details>
+  <summary>FAQ: Does Orbit ONLY work on specific coding environment</summary>
+  The answer is NO. 
+  
+  Being non-instrusive is a key design principle for us. Orbit puts no restriction on model development tool and approach. It is very easy to incorporate Orbit in your data science workflow as long as you can run Python. We are using vs-code for illustraction purpose. 
+  
+-------------------------------------------------------------------------------------------------------------------------
+</details>
+
 The code written by **Hello Food**’s Data Scientists can be viewed on this editor. You can navigate to different files using the directory explorer to the left. At a high level, the `model.py` file includes some code to train the model, some code to use the model for inference, and some code to calculate the performance of the model. There are three functions in `model.py`: `train`, `predict`, and `eval`. **There’s no Foundations Orbit feature in them right now.**
 
 <details>
@@ -141,6 +150,14 @@ Why is this important?
 </details>
 
 **Congratulations, you’ve deployed your churn model!** The model has been deployed to our trial environment running on GCP.
+
+<details>
+  <summary>FAQ: Does Orbit ONLY work on specific cloud infrastructure like Google Cloud Platform?</summary>
+  
+  The answer is NO. Orbit is platform agnostic, meaning it can be configured to work on any insfrastructures that meet the needs of your team, including major cloud platforms (AWS, Azure, GCP), on-premise clusters, or a hybrid of infrastructures.
+  
+-------------------------------------------------------------------------------------------------------------------------
+</details>
 
 ## Step 5 of 9: Monitoring your model using Orbit GUI
 
@@ -273,6 +290,14 @@ You can ignore the messages that got printed out in the terminal.
 Now you are ready to head back to the GUI. Once you are back in the GUI, you will see the new model package that you just deployed. Please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
 * Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model_v2" if you followed our instruction)
+
+<details>
+  <summary>What does this orbit feature do? (click to expand)</summary>
+
+xxx
+
+-------------------------------------------------------------------------------------------------------------------------
+</details>
 
 ## Step 8 of 9: Catch unexpected abnormality in production data
 
