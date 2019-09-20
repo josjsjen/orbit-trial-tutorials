@@ -303,12 +303,10 @@ _Hint: you know that it is happening if there’s a gradual performance decline,
 
 Please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
-* Click the **Recalibrate** button of your default model. A modal should appear on the screen
+* Click the **Recalibrate** button of your default model, located on the right hand side of the **Model Registry** table 
+* A modal should appear on the screen
 * Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-v3”
-* Under **Parameters**, enter the following, use the **+** or **-** button to add/remove parameters
- 
- <details>
-  <summary>Instructions for parameters, click to expand</summary>
+* Under **Parameters**, enter the following:
  
   | Key        | Value       |
   | -----------|-------------|
@@ -323,8 +321,6 @@ For example, if the latest date in the simulated production environment is 2020-
   | -----------|-------------|
   | start_date | 2020-07-01  |
   | end_date   | 2020-10-01  |
--------------------------------------------------------------------------------------------------------------------------
-</details>
 
 * Click **Recalibrate** button
 * Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v3" if you followed our instruction)
