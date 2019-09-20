@@ -126,7 +126,7 @@ Next, In the terminal, enter this command then press ‘Enter’ key:
 ```bash
 foundations orbit serve start --project_name=orbit-trial --model_name=model-v1 --project_directory=./ --env=scheduler
 ```
-You can ignore the messages that got printed out.
+You can ignore the messages that got printed out in the terminal.
 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
@@ -268,7 +268,7 @@ Then run this in terminal:
 ```bash
 foundations orbit serve start --project_name=orbit-trial --model_name=model-v2 --project_directory=./ --env=scheduler
 ```
-You can ignore the messages that got printed out.
+You can ignore the messages that got printed out in the terminal.
 
 Now you are ready to head back to the GUI. Once you are back in the GUI, you will see the new model package that you just deployed. Please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
