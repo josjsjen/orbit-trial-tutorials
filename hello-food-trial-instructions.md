@@ -303,7 +303,6 @@ Please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
 * Click the **Recalibrate** button of your default model. A modal should appear on the screen
 * Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-v3”
-* Under **Description**, enter description. For example, enter “recalibrating model using latest data”
 * Under **Parameters**, enter the following, use the **+** or **-** button to add/remove parameters
  
  <details>
