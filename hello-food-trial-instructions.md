@@ -160,7 +160,7 @@ Now please go to the GUI using the other link that we shared with you. Once you 
 * Navigate to **Model Evaluation** tab using the side bar
 * You can see the four metrics are being tracked. These are the the metrics we called `track_production_metrics` function with earlier in step 3
 
-Again, 1 minute of trial simulates 1 month in real life. **keep an eye on the model performance in the Model Evaluation tab. We recommend that you come back here in a couple of minutes and go through the rest of this tutorial.**
+Again, 1 minute of trial simulates 1 month in real life. **Now, keep an eye on the model performance in the Model Evaluation tab.**
 
 At anytime, you can click the (?) button located on the top right corner to go through a quick overview of the GUI.
 
