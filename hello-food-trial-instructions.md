@@ -174,7 +174,7 @@ By now, you are probably beginning to see that your model performance is sufferi
 
 **Regardless of which option you choose, you need to act fast because your company is bleeding money now as you are reading this.**
 
-There is a fourth option. You let Foundations Orbit help you identify & resolve the issue in a few steps in the next section.
+There is a fourth option. You use Foundations Orbit to identify & resolve the issue in a few steps in the next section.
 
 ## Step 7 of 9: The Orbit way
 
