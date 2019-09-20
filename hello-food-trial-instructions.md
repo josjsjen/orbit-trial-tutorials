@@ -286,7 +286,7 @@ Please do the following on the GUI:
 * Check if any of the attributes have a `critical` status
 * Select a different validation report to check for issues at different time or different point of our ML pipeline
 
-Once you’ve identify which attribute is having critical issue, remember the name of the attribute, and report that to us. **We will fix the issue for you, but only if you correctly report which attribute is having critical issue.** To report and fix the issue, navigate to the IDE, enter the following command in the Terminal
+Once you’ve identify which attribute is having critical issue, remember the name of the attribute, and report that to us by following the instructions below. **We will fix the issue for you, but only if you correctly report which attribute is having critical issue.** To report and fix the issue, navigate to the IDE, enter the following command in the Terminal
 
 ```bash
 curl http://<user_key>:31998/simulator/fix_special_value?column_name=<attribute_name>
