@@ -94,7 +94,7 @@ Then add the following code to the `eval(...)` function in `model.py` around lin
 ```
 
 <details>
-  <summary>What does this orbit feature do? (Optional reading)</summary>
+  <summary>What does this orbit feature do? (click to expand)</summary>
 
 Orbit allows you to specify custom metric calculation code and tracks the resulting metrics. As we will show later, after we deploy this model, Orbit will package the code and automate the execution of these metric calculation function and the tracking of the resulting metrics, which you can visualize in the Orbit GUI.
 
@@ -128,7 +128,7 @@ foundations orbit serve start --project_name=orbit-trial --model_name=model-v1 -
 ```
 
 <details>
-  <summary>What does this orbit feature do? (Optional reading)</summary>
+  <summary>What does this orbit feature do? (click to expand)</summary>
 
 Orbit automatically package up the code and model into what we call a "model package", which is a microservice that can be accessed by any IT systems using REST API. The entrypoints specified in the `foundations_package_manifest.yaml` file will become API endpoints that can receive requests and response with output from/to IT systems. 
 
