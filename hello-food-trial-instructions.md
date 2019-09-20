@@ -279,7 +279,7 @@ _Hint: you know that it is happening if you observe sharp decline in your model 
 
 Please do the following on the GUI:
 * Navigate to **Data Health** tab using the side bar
-* Under **Validation Report** drop down, select a validation report from the latest date
+* Under **Select report** drop down, select a validation report from the latest date
 * Review reports in the three tabs: **Schema Check**, **Population Shift**, and **Data Quality**
 * Check if any of the attributes have a `critical` status
 * Select a different validation report to check for issues at different time or different point of our ML pipeline
@@ -302,7 +302,7 @@ _Hint: you know that it is happening if there’s a gradual performance decline,
 Please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
 * Click the **Recalibrate** button of your default model. A modal should appear on the screen
-* Under **Model Package Name**, enter a name for the model that you are about to create. For example, enter “model-v3”
+* Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-v3”
 * Under **Description**, enter description. For example, enter “recalibrating model using latest data”
 * Under **Parameters**, enter the following, use the **+** or **-** button to add/remove parameters
  
@@ -314,9 +314,10 @@ Please do the following on the GUI:
   | start_date | <start_date>|
   | end_date   | <end_date>  |
 
-With `<start_date>` and `<end_date>` being the start and end of the time period that you want to recalibrate your model with. We recommend recalibrating this model with the lastest 3 months of data. 
-For example, if the latest date in the simulated production environment, which you can find out by checking the latest date in the **Model Evaluation** tab, is 2020-10-01. You should enter:
- 
+With `<start_date>` and `<end_date>` being the start and end of the time period that you want to recalibrate your model with. We recommend recalibrating this model with the lastest 3 months of data. You can find out the latest date by checking the latest date in the **Model Evaluation** tab
+
+For example, if the latest date in the simulated production environment is 2020-10-01. You should enter:
+
   | Key        | Value       |
   | -----------|-------------|
   | start_date | 2020-07-01  |
