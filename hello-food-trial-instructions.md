@@ -293,7 +293,7 @@ curl http://<user_key>:31998/simulator/fix_special_value?column_name=<attribute_
 ```
 Replacing `<attribute_name>` with the name of the attribute you want to report and `<user_key>` with your user_key
 
-Once you correctly report the issue, we will fix it. You can tell it is fixed by checking the latest validation report in the **Data Health** tab and checking the latest model performance in the **Model Evaluation** tab.
+Once you correctly report the issue, we will fix it. You can tell it is fixed by refreshing the **Data Health** tab then checking the latest validation report and checking the latest model performance in the **Model Evaluation** tab.
 
 While it is not part of this trial, the full Orbit platform also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
 
