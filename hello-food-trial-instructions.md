@@ -280,8 +280,9 @@ _Hint: you know that it is happening if you observe sharp decline in your model 
 
 Please do the following on the GUI:
 * Navigate to **Data Health** tab using the side bar
-* Under **Select report** drop down, select a validation report from the latest date
-* Review reports in the three tabs: **Schema Check**, **Population Shift**, and **Data Quality**
+* Under **Select report** drop down, located on the left hand side, select a validation report from the latest date
+* After you click on a validation report, information on the right hand side should be populated 
+* Review information in the three tabs: **Schema Check**, **Population Shift**, and **Data Quality**
 * Check if any of the attributes have a `critical` status
 * Select a different validation report to check for issues at different time or different point of our ML pipeline
 
