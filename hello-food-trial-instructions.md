@@ -52,6 +52,7 @@ First, let's open the code editor on a browser using the link that we sent you.
 <br>
 The answer is NO. 
 
+
 Being non-instrusive is a key design principle for us. **Orbit puts no restriction on model development tool and approach. It is very easy to incorporate Orbit in your data science workflow as long as you can run Python.**
 
 In this trial, we are using Visual Studio Code as our code editor.
@@ -130,9 +131,9 @@ Transparency of model performance is often a challenage in applied AI. Once a mo
 
 Now, let’s deploy the trained model to our simulated production environment. 
 
-Foundations provides a way to seamlessly package machine learning models for production.
+Orbit provides a way to seamlessly package machine learning models for production.
 
-Copy and paste the following code in `foundations_package_manifest.yaml`, which tells Foundations to serve the `predict(...)` function from `model.py`:
+Copy and paste the following code in `foundations_package_manifest.yaml`, which tells Orbit to serve the `predict(...)` function from `model.py`:
 
 ```yaml
 entrypoints:
@@ -156,7 +157,7 @@ You can ignore the messages that got printed out in the terminal.
 Orbit automatically package up the code and model into what we call a "model package", which is a microservice that can be accessed by any IT systems using REST API. The entrypoints specified in the `foundations_package_manifest.yaml` file will become API endpoints that can receive requests and response with output from/to IT systems. 
 
 Why is this important?
-* The packaging aspect of this feature ensures reproducibility of models
+* The packaging aspect of this feature ensures reproducibility of models. A model is the final product of a training process that includes many moving parts evolving at different rate. Very often teams cannot re-create a model for production because they lost track of the version of code that created the model and the dependencies of the training code,  which includes configurations, hard-coded values, libraries, meta-data, artifacts, and etc.
 * The serving aspect of this feature essentially makes it easy to turn your model into a service that can communicate with modern technology systems via API, making it easier to put models in production
 
 -------------------------------------------------------------------------------------------------------------------------
