@@ -357,7 +357,9 @@ While it is not part of this trial, the full Orbit platform also offers email an
 
 _Hint: you know that it is happening if there’s a gradual performance decline, while there isn’t any glaring issues in Data Health tab._
 
-Please do the following on the GUI:
+Before we proceed to the final session of this trial, it'd be helpful to know the current date of this simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available in the charts.
+
+Then please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
 * Click the **Recalibrate** button of your default model, located on the right hand side of the **Model Registry** table 
 * A modal should appear on the screen
