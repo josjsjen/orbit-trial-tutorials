@@ -50,10 +50,10 @@ First, let's open the code editor on a browser using the link that we sent you.
 <details>
   <summary>FAQ: Does Orbit ONLY work on specific coding environment</summary>
   <br>
-  The answer is NO.
-  
+  The answer is NO. 
+  <br>
   Being non-instrusive is a key design principle for us. **Orbit puts no restriction on model development tool and approach. It is very easy to incorporate Orbit in your data science workflow as long as you can run Python.**
-  
+  <br>
   In this trial, we are using Visual Studio Code as our code editor.
   
 -------------------------------------------------------------------------------------------------------------------------
@@ -66,7 +66,7 @@ The code written by **Hello Food**’s Data Scientists can be viewed on this edi
 
 The train function takes in two arguments: start and end dates of your training period. Given these arguments, the train function fetches the data, processes them, trains a simple random forest model, and saves the model to a specified location. 
 
-The predict function takes in one argument: the inference data. Given the inference date, the function pulls from database the data it needs to run prediction for the specified date, then saves the predictions back to the database.
+The predict function takes in one argument: the inference date. Given the inference date, the function pulls from database the data it needs to run prediction for the specified date, then saves the predictions back to the database.
 
 The eval function takes in one argument: the evaluation date. Given evaluation key, the function pulls from database the data it needs to compute metrics as of the evaluation date, computes the metrics, and use Foundations Orbit’s track_production_metrics to log and store the metrics.
 
