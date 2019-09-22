@@ -351,7 +351,7 @@ Once you correctly report the issue, we will fix it. You can tell it is fixed by
 
 While it is not part of this trial, the full Orbit platform also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
 
-**-----------We recommend that you wait at least 3 minutes before proceeding to the final step-----------**
+**<-----------We recommend that you wait at least 3 minutes before proceeding to the final step----------->**
 
 ## Step 7 of 7: Address population and concept drift with recalibration
 
@@ -380,16 +380,25 @@ For example, if the latest date in the simulated production environment is 2020-
 
 * Click **Recalibrate** button
 
-**-----------Recalibration will take a moment. We recommend you refresh after a couple of minutes.-----------**
+**<-----------Recalibration will take a moment. We recommend you wait a couple of minutes then refresh.----------->**
 
 * Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v3" if you followed our instruction)
 
-While not part of this trial, the full Orbit platform also provides more sophisticated control on how the model can be recalibrated, existing features include:
+
+<details>
+  <summary>Additional features that are not part of this trial (click to expand)</summary>
+<br>
+While not part of this trial, the full Orbit platform also provides more sophisticated control on how the model can be recalibrated. Features include:
 * Scheduled recalibration
 * Control how much old vs new data to include
 * Performance-triggered recalibration
 * Auto-swap
 * Canary release for new models
+  
+-------------------------------------------------------------------------------------------------------------------------
+</details>
+
+
 
 ## Congratulations. You’ve completed the trial.
 
