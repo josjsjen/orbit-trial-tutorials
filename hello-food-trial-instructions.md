@@ -328,15 +328,18 @@ This essentially achieves **hot-swap of machine learning model in production**. 
 </details>
 
 <details>
-  <summary>FAQ: Does Orbit ONLY work on specific coding environment</summary>
+  <summary>What does this orbit feature do? (click to expand)</summary>
 <br>
-The answer is NO. 
+
+x. 
 
 
-Being non-instrusive is a key design principle for us. **Orbit puts no restriction on model development tool and approach. It is very easy to incorporate Orbit in your data science workflow as long as you can run Python.**
+x.
 
-In this trial, we are using Visual Studio Code as our code editor.
-  
+x?
+
+x.
+
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
