@@ -1,6 +1,5 @@
 <img style="float: left;" src="https://dessa.com/wp-content/uploads/2018/05/dessa_logo.svg" height="50">
-<br>
-<hr>
+
 
 # Welcome to Foundations Orbit Online Trial
 
