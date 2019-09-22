@@ -45,7 +45,7 @@ Let’s imagine you work at a meal-kit subscription company, called **Hello, Foo
 
 ## Step 1 of 7: Train the model using sample solution code
 
-First, let's open the code editor on a browser using the link that we sent you. 
+First, let's open the **code editor** on a browser using the link that we sent you. 
 
 <details>
   <summary>FAQ: Does Orbit ONLY work on specific coding environment</summary>
@@ -60,7 +60,7 @@ In this trial, we are using Visual Studio Code as our code editor.
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-The code written by **Hello Food**’s Data Scientists can be viewed on this editor. You can navigate to different files using the directory explorer to the left. At a high level, the `model.py` file includes some code to train the model, some code to use the model for inference, and some code to calculate the performance of the model. There are three functions in `model.py`: `train`, `predict`, and `eval`. **There’s no Foundations Orbit feature in them right now.**
+The code written by **Hello Food**’s Data Scientists can be viewed on this editor. You can navigate to different files using the explorer to the left. At a high level, the `model.py` file includes some code to train the model, some code to use the model for inference, and some code to calculate the performance of the model. There are three functions in `model.py`: `train`, `predict`, and `eval`. **There’s no Foundations Orbit feature in them right now.**
 
 <details>
   <summary>Optional reading</summary>
