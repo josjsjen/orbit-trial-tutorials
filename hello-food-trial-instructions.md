@@ -265,9 +265,7 @@ Next, add these two lines of code to the `predict(...)` function in `model.py`. 
 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
-
-
-
+<br>
 Orbit introduces a way to monitor and validate production data for machine learning models.
 
 A two-step process is carried out to achieve this:
