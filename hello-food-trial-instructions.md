@@ -1,5 +1,6 @@
 <img style="float: left;" src="https://dessa.com/wp-content/uploads/2018/05/dessa_logo.svg" height="50">
-
+<br>
+<hr>
 
 # Welcome to Foundations Orbit Online Trial
 
@@ -9,7 +10,7 @@ In this tutorial we will go through an example of what Data Science teams need t
 
 We’re providing you with a fully-managed environment so you can focus on understanding and solving the challenges associated with hosting live models. This trial environment provides you with
 * An in-browser Python IDE with popular data science & ML packages pre-installed
-* The Foundations Orbit GUI 
+* The Foundations Orbit Graphical User Interface (GUI) 
 * A tutorial with example code & data
 * A simulated production environment
 * Free cloud compute
@@ -37,12 +38,12 @@ Let’s imagine you work at a meal-kit subscription company, called **Hello, Foo
 * Special offer capacity: 10%. This means the company has budget to send special offer to 10% of customers each month. For simplicity, let’s assume:
   * If a customer wants to churn and receives an offer before they actually do, their churn likelihood will significantly reduce
   * If a customer has no intention to churn but receives an offer, they will still get the benefits of the special offer. However, this would be a waste of the retention budget
--------------------------------------------------------------------------------------------------------------------------
+<hr>
 </details>
 
 **Because the company only has limited resources to address retention, it is critical to predict correctly which customers are likely to churn**. 4 months ago, your team decided to develop a **machine learning model to predict which customers are likely to churn based on their recent behaviour so that they can be targeted for special offers.** Now the model is ready to be deployed and all production systems are wired up. You are getting ready to deploy the model and hopefully it will have a positive impact on the business: **lower churn, more revenue month over month** ($300 x number of active customers that month)
 
-## Step 2 of 9: Introduction to the sample solution code
+## Step 1 of 8: Train the model using sample solution code
 
 First, let's open the code editor on a browser using the link that we sent you. 
 
