@@ -153,12 +153,12 @@ You can ignore the messages that got printed out in the terminal.
 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
-
+<br>
 Orbit automatically package up the code and model into what we call a "model package", which is a microservice that can be accessed by any IT systems using REST API. The entrypoints specified in the `foundations_package_manifest.yaml` file will become API endpoints that can receive requests and response with output from/to IT systems. 
 
 Why is this important?
-* The packaging aspect of this feature ensures reproducibility of models. A model is the final product of a training process that includes many moving parts evolving at different rate. Very often teams cannot re-create a model for production because they lost track of the version of code that created the model and the dependencies of the training code,  which includes configurations, hard-coded values, libraries, meta-data, artifacts, and etc.
-* The serving aspect of this feature essentially makes it easy to turn your model into a service that can communicate with modern technology systems via API, making it easier to put models in production
+* A model is the final product of a training process that includes many moving parts evolving at different rate. Very often teams cannot re-create a model for production because they lost track of the version of code that created the model and the dependencies of the training code,  which includes configurations, hard-coded values, libraries, meta-data, artifacts, and etc. **The packaging aspect of this feature ensures reproducibility of models.**
+* For a model to be useful to the day-to-day operation of a company, it needs to communicate with different IT systems. **The serving aspect of this feature essentially makes it easy to turn your model into a service that can communicate with modern technology systems via API, making it easier to put models in production**
 
 -------------------------------------------------------------------------------------------------------------------------
 </details>
