@@ -328,12 +328,14 @@ This essentially achieves **hot-swap of machine learning model in production**. 
 </details>
 
 <details>
-  <summary>What does this orbit feature do? (click to expand)</summary>
+  <summary>FAQ: Does Orbit ONLY work on specific coding environment</summary>
 <br>
-In Orbit, each project can have multiple model packages deployed. IT systems that consume model outputs just need to communicate with the project through API. By marking a model "Default", project owner can easily choose a model package to be the effective model when IT systems request predictions from the project through API. 
+The answer is NO. 
 
 
-This essentially achieves **hot-swap of machine learning model in production**. When you have a newer version of the model (e.g. because you fix some issues like we just did), you can easily make it the model that's in effect in production.
+Being non-instrusive is a key design principle for us. **Orbit puts no restriction on model development tool and approach. It is very easy to incorporate Orbit in your data science workflow as long as you can run Python.**
+
+In this trial, we are using Visual Studio Code as our code editor.
   
 -------------------------------------------------------------------------------------------------------------------------
 </details>
