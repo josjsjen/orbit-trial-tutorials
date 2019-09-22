@@ -49,7 +49,7 @@ First, let's open the code editor on a browser using the link that we sent you.
 
 <details>
   <summary>FAQ: Does Orbit ONLY work on specific coding environment</summary>
-  
+  <br>
   The answer is NO. 
   
   Being non-instrusive is a key design principle for us. **Orbit puts no restriction on model development tool and approach. It is very easy to incorporate Orbit in your data science workflow as long as you can run Python.**
