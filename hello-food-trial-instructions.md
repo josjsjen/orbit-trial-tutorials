@@ -297,14 +297,15 @@ entrypoints:
 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
-
-This is adding a recalibration endpoint for the model package. As we serve this model, Foundations will create a new microservice for this model with a recalibration endpoint that can be hit via API to trigger recalibration. As a user, you can define what API arguments the model microservice is expecting to successfully kickoff a recalibration job. In this example, the `train` function expects two arguments, start and end dates of the training period, and takes care of training a new model given these arguments.
+  <br>
+  This is adding a recalibration endpoint for the model package. As we serve this model, Foundations will create a new microservice for this model with a recalibration endpoint that can be hit via API to trigger recalibration. As a user, you can define what API arguments the model microservice is expecting to successfully kickoff a recalibration job. In this example, the `train` function expects two arguments, start and end dates of the training period, and takes care of training a new model given these arguments.
 
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
 ### Let's deploy a new model with these fixes
-Then run this in terminal:
+
+The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal:
 ```bash
 foundations orbit serve start --project_name=orbit-trial --model_name=model-v2 --project_directory=./ --env=scheduler
 ```
@@ -312,13 +313,16 @@ You can ignore the messages that got printed out in the terminal.
 
 Now you are ready to head back to the GUI. Once you are back in the GUI, you will see the new model package that you just deployed. Please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
-* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model_v2" if you followed our instruction)
+* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v2" if you followed our instruction)
 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
-
-xxx
-
+  <br>
+  In Orbit, each project can have multiple model packages deployed. IT systems that consume model outputs just need to communicate with the project through API. Project owner can easily choose a model package to the be "default" or effective model for a project.
+  
+  
+  This essentially achieves **hot-swap of machine learning model in production**. When you have a newer version of the model (e.g. because you fix some issues like we just did), you can easily make it the model that's in effect in production
+ 
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
