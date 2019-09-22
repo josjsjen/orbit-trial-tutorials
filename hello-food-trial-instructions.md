@@ -404,13 +404,13 @@ While not part of this trial, the full Orbit platform also provides more sophist
 ## Congratulations. You’ve completed the trial.
 
 **To Summarize, in this trial, we’ve shown you several key features of Foundations Orbit:**
-* Easily convert your models and code into consumable micro-services.   
+* Easily convert your models and code into consumable micro-services   
   -> This ensures reproducibility of models and reduces headache when putting models in production
-* Monitor model performance in production.   
+* Monitor model performance in production   
   -> This gives your organization transparency into how model are performing
-* Monitor production data issues and distribution shift.   
-  -> This prevents data issues that would adversely impact your models from being undetected, costing you millions**
-* Automatically recalibrate your models with new data.   
+* Monitor production data issues and distribution shift   
+  -> This prevents data issues that would adversely impact your models from being undetected, costing you millions
+* Automatically recalibrate your models with new data   
   -> This ensure the model is up-to-date without the hustle and delay from rebuilding models
 
 **The product also includes several features that are not in the trial, including:**
