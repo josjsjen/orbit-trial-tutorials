@@ -43,14 +43,14 @@ Let’s imagine you work at a meal-kit subscription company, called **Hello, Foo
 
 **Because the company only has limited resources to address retention, it is critical to predict correctly which customers are likely to churn**. 4 months ago, your team decided to develop a **machine learning model to predict which customers are likely to churn based on their recent behaviour so that they can be targeted for special offers.** Now the model is ready to be deployed and all production systems are wired up. You are getting ready to deploy the model and hopefully it will have a positive impact on the business: **lower churn, more revenue month over month** ($300 x number of active customers that month)
 
-## Step 1 of 8: Train the model using sample solution code
+## Step 1 of 7: Train the model using sample solution code
 
 First, let's open the code editor on a browser using the link that we sent you. 
 
 <details>
   <summary>FAQ: Does Orbit ONLY work on specific coding environment</summary>
   <br>
-  The answer is NO. 
+  The answer is NO.
   
   Being non-instrusive is a key design principle for us. **Orbit puts no restriction on model development tool and approach. It is very easy to incorporate Orbit in your data science workflow as long as you can run Python.**
   
@@ -89,7 +89,7 @@ You can ignore the warning messages in the terminal. Once it completes, you can 
 
 **There is no Orbit magic so far. These are the things that you normally do in a typical data science project, but simplified for illustration purpose.**
 
-## Step 3 of 9: Monitoring model performance using Orbit
+## Step 2 of 7: Monitoring model performance using Orbit
 
 Now, we are ready to deploy the model into production. Before we actually do that in the next section, one thing is still missing. As soon as we deploy this model into the simulated production environment, it will start being consumed by the production environment and having impacts on the business. **How can you track the performance metrics of your model over time, and be able to monitor them easily?**
 
@@ -120,7 +120,7 @@ In this example, we are monitoring 4 metrics. The first two are typical mathemat
 </details>
 
 
-## Step 4 of 9: Deploying the model
+## Step 3 of 7: Deploying the model
 
 Now, let’s deploy the trained model to our simulated production environment. 
 
@@ -166,7 +166,7 @@ Why is this important?
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-## Step 5 of 9: Monitoring your model using Orbit GUI
+## Step 4 of 7: Monitoring your model using Orbit GUI
 
 Now, we need to start monitoring how well our model is performing on live data. 
 
@@ -182,18 +182,18 @@ Now please go to the GUI using the other link that we shared with you. Once you 
 * Once you are in the project, navigate to **Model Management** tab using the side bar
 * In **Model Management**, you will see information of the model that you just deployed
 * Navigate to **Model Evaluation** tab using the side bar
-* You can see the four metrics are being tracked. These are the the metrics we called `track_production_metrics` function with earlier in step 3
+* You can see the four metrics are being tracked. These are the the metrics we called `track_production_metrics` function with earlier in step 2
 
 Again, 1 minute of trial simulates 1 month in real life. **Now, keep an eye on the model performance in the Model Evaluation tab.**
 
 At anytime, you can click the (?) button located on the top right corner to go through a quick overview of the GUI.
 
-## Step 6 of 9: The big problem
+## The big problem
 
 By now, you are probably beginning to see that your model performance is suffering. You can tell by going to Model Evaluation tab, which monitors your model performance in production over time.
 
 **Now that your model performance is decaying, revenue is dropping. Do you know what is wrong? What do you do? Here are three options you normally have in real-life** (we do not recommend actually doing these, there's a better way which we will introduce in a moment)
-1. If you are a Data Science guru, you roll up your sleeves and head to the IDE and do some investigation on the dataset. You are welcome to write some python code to identify & resolve the problem, and re-deploy your new model following the instructions in step 4
+1. If you are a Data Science guru, you roll up your sleeves and head to the IDE and do some investigation on the dataset. You are welcome to write some python code to identify & resolve the problem, and re-deploy your new model following the instructions in step 3
 2. If you are not technical, you can reach out to someone else to assist on the task. Is there a data scientist from your company that can spare the time from other initiatives to help you out?
 3. You can email the original model developer at a.lu@dessa.com. He will fix the issue for you. He’s quite busy on his new projects, but he will try his best to get back to you in a couple of weeks
 
@@ -201,7 +201,7 @@ By now, you are probably beginning to see that your model performance is sufferi
 
 There is a fourth option. You use Foundations Orbit to identify & resolve the issue in a few steps in the next section.
 
-## Step 7 of 9: The Orbit way
+## Step 5 of 7: The Orbit way
 
 Machine learning models in production typically suffer from two types of issues: 
 
@@ -306,7 +306,7 @@ xxx
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-## Step 8 of 9: Catch unexpected abnormality in production data
+## Step 6 of 7: Catch unexpected abnormality in production data
 
 _Hint: you know that it is happening if you observe sharp decline in your model performance and significant difference in your data from development datasets. For example, if there a way too many or too few null values for some attributes than expected._
 
@@ -329,7 +329,7 @@ Once you correctly report the issue, we will fix it. You can tell it is fixed by
 
 While it is not part of this trial, the full Orbit platform also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
 
-## Step 9 of 9: Address population and concept drift with recalibration
+## Step 7 of 7: Address population and concept drift with recalibration
 
 _Hint: you know that it is happening if there’s a gradual performance decline, while there isn’t any glaring issues with the dataset._
 
