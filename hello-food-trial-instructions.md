@@ -1,3 +1,7 @@
+<img style="float: left;" src="https://dessa.com/wp-content/uploads/2018/05/dessa_logo.svg" height="50">
+<br>
+<hr>
+
 # Welcome to Foundations Orbit Online Trial
 
 *Estimated time: 30 minutes*
@@ -16,7 +20,7 @@ To complete this trial, you will need 3 things that you should have received fro
 * Link to the online code editor
 * Link to the Foundations Orbit GUI
 
-## Step 1 of 9: Introduction to the problem
+## Introduction to the problem
 
 Let’s imagine you work at a meal-kit subscription company, called **Hello, Food**. The business model is to prepare & deliver the ingredients for meals every week to subscribed customers for them to cook themselves. 
   
