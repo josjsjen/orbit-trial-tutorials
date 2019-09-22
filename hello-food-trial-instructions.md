@@ -111,7 +111,7 @@ Then add the following code to the `eval(...)` function in `model.py` around lin
 ```
 
 <details>
-  <summary><font color='red'>What does this orbit feature do? (click to expand)</font></summary>
+  <summary>What does this orbit feature do? (click to expand)</summary>
 <br>
 
 Orbit allows you to specify custom metric calculation code and tracks the resulting metrics. As we will show later, after we deploy this model, Orbit will package the code and automate the execution of these metric calculation function and the tracking of the resulting metrics, which you can visualize in the Orbit GUI. 
@@ -168,8 +168,9 @@ Why is this important?
 
 <details>
   <summary>FAQ: Does Orbit ONLY work on specific cloud infrastructure like Google Cloud Platform?</summary>
+  <br>
   
-  The answer is NO. Orbit is platform agnostic, meaning it can be configured to work on any insfrastructures that meet the needs of your team, including major cloud platforms (AWS, Azure, GCP), on-premise clusters, or a hybrid of infrastructures.
+  The answer is NO. **Orbit is platform agnostic**, meaning it can be configured to work on any insfrastructures that meet the needs of your team, including major cloud platforms (AWS, Azure, GCP), on-premise clusters, or a hybrid of infrastructures.
   
 -------------------------------------------------------------------------------------------------------------------------
 </details>
@@ -264,14 +265,15 @@ Next, add these two lines of code to the `predict(...)` function in `model.py`. 
 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
+<br>
+Orbit introduces a way to monitor and validate production data for machine learning models. A two-step process is carried out to achieve this:
 
-Orbit introduces the concept of "Data Contract". It has two components: 
-1. The creation of a data contract from a reference dataset, which automatically summarizes the characteristics of a dataset
-2. The application of a data contract on another dataset, using its `validate` method. When this is executed, Orbit will automatically runs QA tests on the dataset against expected characteristics stored in a data contract
 
-In our example, we create a data contract called "my_contract" from the dataset that we used to train the model. Then we apply this data contract on the production dataset that the predict function uses to generate predictions.
+First, the code we added to the train(...) function essentially creates a "data contract" object from our training dataset. This "data contract" object automatically summarizes characteristics of the training dataset (x_train), including schema and key statistics. The ".save" function stores the information into a file that we can reference in the future.
 
-In practice, you can create multiple Data Contracts and validation points at multiple points of your machine learning pipeline, quality-assuring both input and output of your model predictions.
+Second, the code we added to the predict(...) function essentially validates the production data at prediction times. Orbit automatically performs data validation by running different tests on the production dataset, making sure the dataset matches what the model is expecting in terms of schema, shape, statistics, etc. The outcome of the validation will be stored and presented on GUI. Critical issues can trigger downstream processes and notifications to key stakeholders.
+
+In our example, we create one data contract called "my_contract" from the training data, then apply this data contract on the production dataset that the predict function uses to generate predictions. In practice, you can create multiple Data Contracts at multiple points of your machine learning pipeline, quality-assuring both input and output of your model predictions.
 
 -------------------------------------------------------------------------------------------------------------------------
 </details>
