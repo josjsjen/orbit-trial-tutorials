@@ -268,8 +268,17 @@ Next, add these two lines of code to the `predict(...)` function in `model.py`. 
 <br>
 Orbit introduces a way to monitor and validate production data for machine learning models.
 
-A two-step process is carried out to achieve this:
 
+
+
+
+
+
+
+
+
+
+A two-step process is carried out to achieve this.
 First, the code we added to the train(...) function essentially creates a "data contract" object from our training dataset. This "data contract" object automatically summarizes characteristics of the training dataset (x_train), including schema and key statistics. The ".save" function stores the information into a file that we can reference in the future.
 
 Second, the code we added to the predict(...) function essentially validates the production data at prediction times. Orbit automatically performs data validation by running different tests on the production dataset, making sure the dataset matches what the model is expecting in terms of schema, shape, statistics, etc. The outcome of the validation will be stored and presented on GUI. Critical issues can trigger downstream processes and notifications to key stakeholders.
