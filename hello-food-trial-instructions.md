@@ -188,10 +188,9 @@ We’ve created a simulated production environment to mimic what you would face 
 
 Now please go to the GUI using the other link that we shared with you. Once you enter the GUI, you will see 1 project in the landing page. Please do the following
 * Click on the "orbit-trial" project
-* Once you are in the project, navigate to **Model Management** tab using the side bar
-* In **Model Management**, you will see information of the model that you just deployed
+* You will land on the **Model Management** tab, where you will see information of the model you just deployed
 * Navigate to **Model Evaluation** tab using the side bar
-* You can see the four metrics are being tracked. These are the the metrics we called `track_production_metrics` function with earlier in step 2
+* You can see the four metrics are being tracked. These are the the metrics we called `track_production_metrics` function with earlier
 
 Again, 1 minute of trial simulates 1 month in real life. **Now, keep an eye on the model performance in the Model Evaluation tab.**
 
@@ -357,7 +356,7 @@ While it is not part of this trial, the full Orbit platform also offers email an
 
 _Hint: you know that it is happening if there’s a gradual performance decline, while there isn’t any glaring issues in Data Health tab._
 
-Before we proceed to the final session of this trial, it'd be helpful to know the current date of this simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available in the charts.
+Before we proceed to the final session of this trial, it'd be helpful to know the current date of the simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available in the charts.
 
 Then please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
