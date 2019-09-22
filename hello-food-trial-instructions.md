@@ -266,6 +266,7 @@ Next, add these two lines of code to the `predict(...)` function in `model.py`. 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
 <br>
+
 Orbit introduces a way to monitor and validate production data for machine learning models.   
   
   
@@ -319,7 +320,7 @@ Now you are ready to head back to the GUI. Once you are back in the GUI, you wil
   <summary>What does this orbit feature do? (click to expand)</summary>
 <br>
 
-In Orbit, each project can have multiple model packages deployed. IT systems that consume model outputs just need to communicate with the project through API. By marking a model "Default", project owner can easily choose a model package to be the effective model when IT systems request predictions from the project through API. 
+In Orbit, each project can have multiple model packages deployed. By marking a model "Default", project owner can easily choose a model package to be the effective model when IT systems request predictions from the project through API. 
 
 
 This essentially achieves **hot-swap of machine learning model in production**. When you have a newer version of the model (e.g. because you fix some issues like we just did), you can easily make it the model that's in effect in production.
@@ -327,25 +328,9 @@ This essentially achieves **hot-swap of machine learning model in production**. 
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-<details>
-  <summary>What does this orbit feature do? (click to expand)</summary>
-<br>
-
-x. 
-
-
-x.
-
-x?
-
-x.
-
--------------------------------------------------------------------------------------------------------------------------
-</details>
-
 ## Step 6 of 7: Catch unexpected abnormality in production data
 
-_Hint: you know that it is happening if you observe sharp decline in your model performance and significant difference in your data from development datasets. For example, if there a way too many or too few null values for some attributes than expected._
+_Hint: you know that it is happening if you observe sharp decline in your model performance and critical issues in data health. For example, if there are way too many null values for some attributes than expected._
 
 Please do the following on the GUI:
 * Navigate to **Data Health** tab using the side bar
@@ -360,15 +345,17 @@ Once you’ve identify which attribute is having critical issue, remember the na
 ```bash
 curl http://<user_key>:31998/simulator/fix_special_value?column_name=<attribute_name>
 ```
-Replacing `<attribute_name>` with the name of the attribute you want to report and `<user_key>` with your user_key
+Replacing `<attribute_name>` with the name of the attribute you want to report and `<user_key>` with your user_key. Make sure you do not leave the '<' and ">" in the command
 
-Once you correctly report the issue, we will fix it. You can tell it is fixed by refreshing the **Data Health** tab then checking the latest validation report and checking the latest model performance in the **Model Evaluation** tab.
+Once you correctly report the issue, we will fix it. You can tell it is fixed by **refreshing the Data Health** tab then checking the latest validation report and checking the latest model performance in the **Model Evaluation** tab. 
 
 While it is not part of this trial, the full Orbit platform also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
 
+**-----------We recommend that you wait at least 3 minutes before proceeding to the final step-----------**
+
 ## Step 7 of 7: Address population and concept drift with recalibration
 
-_Hint: you know that it is happening if there’s a gradual performance decline, while there isn’t any glaring issues with the dataset._
+_Hint: you know that it is happening if there’s a gradual performance decline, while there isn’t any glaring issues in Data Health tab._
 
 Please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
@@ -392,6 +379,9 @@ For example, if the latest date in the simulated production environment is 2020-
   | end_date   | 2020-10-01  |
 
 * Click **Recalibrate** button
+
+**-----------Recalibration will take a moment. We recommend you refresh after a couple of minutes.-----------**
+
 * Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v3" if you followed our instruction)
 
 While not part of this trial, the full Orbit platform also provides more sophisticated control on how the model can be recalibrated, existing features include:
