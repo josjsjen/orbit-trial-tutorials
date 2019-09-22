@@ -112,13 +112,15 @@ Then add the following code to the `eval(...)` function in `model.py` around lin
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
 <br>
+
 Orbit allows you to specify custom metric calculation code and tracks the resulting metrics. As we will show later, after we deploy this model, Orbit will package the code and automate the execution of these metric calculation function and the tracking of the resulting metrics, which you can visualize in the Orbit GUI. 
+
 
 In this example, we are monitoring 4 metrics. The first two are typical mathematical metrics for classification problems and the last two are business metrics for this initiative.
 
 Why is this important?
 
-Transparency of model performance and impact across the organization is often a challenage in applied AI. Once a model is deployed, it is often very hard for people other than the original model developer to know how it is performing. Teams often end up building and scheduling ad-hoc performance reporting scripts and communicating back-and-forth with non-technical stakeholders. Orbit makes this process painless for everyone.
+Transparency of model performance is often a challenage in applied AI. Once a model is deployed, it is often very hard for people other than the original model developer to know how it is performing. Teams often end up building and scheduling ad-hoc performance reporting scripts and communicating back-and-forth with non-technical stakeholders. Orbit makes this process painless for everyone.
 
 -------------------------------------------------------------------------------------------------------------------------
 </details>
