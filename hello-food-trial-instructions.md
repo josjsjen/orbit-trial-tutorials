@@ -111,7 +111,7 @@ Then add the following code to the `eval(...)` function in `model.py` around lin
 ```
 
 <details>
-  <summary>What does this orbit feature do? (click to expand)</summary>
+  <summary style="color:blue">What does this orbit feature do? (click to expand)</summary>
 <br>
 
 Orbit allows you to specify custom metric calculation code and tracks the resulting metrics. As we will show later, after we deploy this model, Orbit will package the code and automate the execution of these metric calculation function and the tracking of the resulting metrics, which you can visualize in the Orbit GUI. 
@@ -155,6 +155,7 @@ You can ignore the messages that got printed out in the terminal.
   <summary>What does this orbit feature do? (click to expand)</summary>
 <br>
 Orbit automatically package up the code and model into what we call a "model package", which is a microservice that can be accessed by any IT systems using REST API. The entrypoints specified in the `foundations_package_manifest.yaml` file will become API endpoints that can receive requests and response with output from/to IT systems. 
+
 
 Why is this important?
 * A model is the final product of a training process that includes many moving parts evolving at different rate. Very often teams cannot re-create a model for production because they lost track of the version of code that created the model and the dependencies of the training code,  which includes configurations, hard-coded values, libraries, meta-data, artifacts, and etc. **The packaging aspect of this feature ensures reproducibility of models.**
@@ -231,30 +232,34 @@ Models are trained using historical data, but changes in customer behaviours and
 
 Luckily, with very little changes to our code, you can have the power to address these issues using Orbit.
 
-### To address the first type of issue
-Let’s start by adding the following line of code to the `model.py` after line 10
+### To address unexpected changes in production data
+
+This can be addressed by adding a couple lines of code. We will explain what they do in a bit.
+
+First, add the following line of code to the `model.py` after line 10
 
 ```python
 from foundations_orbit import DataContract
 ```
 
-Add these two lines of code to the `train(...)` function in `model.py`. This should be around line 30. Insert this after the line `# insert DataContract creation code here #`
+Next, add these two lines of code to the `train(...)` function in `model.py`. This should be around line 30. Insert this after the line `# insert DataContract creation code here #`
 ```python
     # insert DataContract creation code here #
     dc = DataContract("my_contract", x_train)
     dc.save(".")
 ```
 
-Add these two lines of code to the `predict(...)` function in `model.py`. This should be around line 51. Insert this after the line `# insert DataContract validation code here #`
+In terminal, run the following command (You can ignore the warning messages in the terminal):
+```bash
+python train_driver.py
+```
+You should be able to see in the explorer on the left hand side that a new file called "my_contract.pkl" has been created.
+
+Next, add these two lines of code to the `predict(...)` function in `model.py`. This should be around line 51. Insert this after the line `# insert DataContract validation code here #`
 ```python
     # insert DataContract validation code here #
     dc = DataContract.load(".", "my_contract")
     dc.validate(x_inference, inference_date)
-```
-
-In terminal, run the following command (You can ignore the warning messages in the terminal):
-```bash
-python train_driver.py
 ```
 
 <details>
