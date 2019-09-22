@@ -111,7 +111,7 @@ Then add the following code to the `eval(...)` function in `model.py` around lin
 ```
 
 <details>
-  <summary style="color:blue">What does this orbit feature do? (click to expand)</summary>
+  <summary><font color='red'>What does this orbit feature do? (click to expand)</font></summary>
 <br>
 
 Orbit allows you to specify custom metric calculation code and tracks the resulting metrics. As we will show later, after we deploy this model, Orbit will package the code and automate the execution of these metric calculation function and the tracking of the resulting metrics, which you can visualize in the Orbit GUI. 
