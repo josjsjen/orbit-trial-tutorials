@@ -380,7 +380,7 @@ For example, if the latest date in the simulated production environment is 2020-
 
 * Click **Recalibrate** button
 
-**<-----------Recalibration will take a moment. We recommend you wait a couple of minutes then refresh.----------->**
+**<----------Recalibration will take a moment. We recommend you wait a couple of minutes then refresh.---------->**
 
 * Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v3" if you followed our instruction)
 
@@ -388,7 +388,9 @@ For example, if the latest date in the simulated production environment is 2020-
 <details>
   <summary>Additional features that are not part of this trial (click to expand)</summary>
 <br>
+
 While not part of this trial, the full Orbit platform also provides more sophisticated control on how the model can be recalibrated. Features include:
+
 * Scheduled recalibration
 * Control how much old vs new data to include
 * Performance-triggered recalibration
