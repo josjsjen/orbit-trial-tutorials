@@ -405,7 +405,6 @@ While not part of this trial, the full Orbit platform also provides more sophist
 
 **To Summarize, in this trial, we’ve shown you several key features of Foundations Orbit:**
 * Easily convert your models and code into consumable micro-services.   
-
   -> This ensures reproducibility of models and reduces headache when putting models in production
 * Monitor model performance in production. 
   -> This gives your organization transparency into how model are performing
