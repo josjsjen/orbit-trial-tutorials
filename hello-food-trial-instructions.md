@@ -266,8 +266,8 @@ Next, add these two lines of code to the `predict(...)` function in `model.py`. 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
 <br>
-Orbit introduces a way to monitor and validate production data for machine learning models. 
-  
+Orbit introduces a way to monitor and validate production data for machine learning models.
+
 
 A two-step process is carried out to achieve this:
 
@@ -275,7 +275,7 @@ First, the code we added to the train(...) function essentially creates a "data 
 
 Second, the code we added to the predict(...) function essentially validates the production data at prediction times. Orbit automatically performs data validation by running different tests on the production dataset, making sure the dataset matches what the model is expecting in terms of schema, shape, statistics, etc. The outcome of the validation will be stored and presented on GUI. Critical issues can trigger downstream processes and notifications to key stakeholders.
 
-In our example, we create one data contract called "my_contract" from the training data, then apply this data contract on the production dataset that the predict function uses to generate predictions. In practice, you can create multiple Data Contracts at multiple points of your machine learning pipeline, quality-assuring both input and output of your model predictions.
+In our example, we create one data contract called "my_contract" from the training data, then apply this data contract on the production data that the predict function uses to generate predictions. In practice, you can create multiple Data Contracts at multiple points of your machine learning pipeline, quality-assuring both input and output of your model predictions.
 
 -------------------------------------------------------------------------------------------------------------------------
 </details>
