@@ -318,11 +318,11 @@ Now you are ready to head back to the GUI. Once you are back in the GUI, you wil
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
 <br>
+
 In Orbit, each project can have multiple model packages deployed. IT systems that consume model outputs just need to communicate with the project through API. By marking a model "Default", project owner can easily choose a model package to be the effective model when IT systems request predictions from the project through API. 
 
 
 This essentially achieves **hot-swap of machine learning model in production**. When you have a newer version of the model (e.g. because you fix some issues like we just did), you can easily make it the model that's in effect in production.
-
  
 -------------------------------------------------------------------------------------------------------------------------
 </details>
