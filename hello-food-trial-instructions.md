@@ -355,15 +355,13 @@ curl http://<user_key>:31998/simulator/fix_special_value?column_name=<attribute_
 ```
 Replacing `<attribute_name>` with the name of the attribute you want to report and `<user_key>` with your user_key. Make sure you do not leave the '<' and ">" in the command
 
-Once you correctly report the issue, we will fix it. You can tell it is fixed by **refreshing the Data Health** tab then checking the latest validation report and checking the latest model performance in the **Model Evaluation** tab. 
+Once you correctly report the issue, we will fix it. You can tell it is fixed by **refreshing the Data Health** tab then checking the latest validation report and checking the latest model performance in the **Model Evaluation** tab. You should see that the model metrics start to recover.
 
 While it is not part of this trial, the full Orbit platform also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
 
-**-----------We recommend that you wait at least 3 minutes before proceeding to the final step-----------**
-
 ## Step 7 of 7: Address population and concept drift with recalibration
 
-_Hint: you know that it is happening if there’s a gradual performance decline, while there isn’t any glaring issues in Data Health tab._
+_Hint: you know that it is happening if there’s a performance decline, but there isn’t any glaring issues in Data Health tab._
 
 Before we proceed to the final session of this trial, it'd be helpful to know the current date of the simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available on the charts.
 
@@ -388,7 +386,7 @@ With `<start_date>` and `<end_date>` being the start and end of the time period 
 
 * Then click the **Recalibrate** button
 
-**----------Recalibration will take a moment. Please wait for a couple of minutes then hit refresh----------**
+_----------Recalibration will take a moment. Please wait for a couple of minutes then hit refresh----------_
 
 * Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v3" if you followed our instruction)
 
