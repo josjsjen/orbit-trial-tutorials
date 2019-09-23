@@ -420,13 +420,15 @@ While not part of this trial, the full Orbit platform also provides more sophist
 * Automatically recalibrate your models with new data   
   -> This ensure the model is up-to-date without the hustle and delay from rebuilding models
 
-**The product also includes several features that are not in the trial, including:**
+**In addition, Orbit has other features that address different challenges with management machine learning models once they are deployed, including:**
 * Audit Trail
 * A/B, canary, blue-green deploy, and out-of-time testing 
 * Notification integration with email and Slack
 * Scheduling, automation, and orchestration of various production tasks
 * Custom data monitoring functions
 * Model version control
+
+We do not have time to cover these features today. Contact us for a full demo.
 
 ## What are the next steps? 
 
