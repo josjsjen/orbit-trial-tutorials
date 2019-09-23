@@ -98,13 +98,13 @@ You can ignore the warning messages in the terminal. Once it completes, you can 
 
 Now, we are ready to deploy the model into production. Before we actually do that in the next section, one thing is still missing. As soon as we deploy this model into the simulated production environment, it will start being consumed by the production environment and having impacts on the business. **How can you track the performance metrics of your model over time, and be able to monitor them easily?**
 
-With Orbit, this is as easy as adding a couple lines of code. Now, let’s add the following line of code to the `model.py` after line 9
+With Orbit, this is as easy as adding a couple lines of code. Now, let’s add the following line of code to the `model.py` after line 10
 
 ```python
 import foundations
 ```
 
-Then add the following code to the `eval(...)` function in `model.py` around line 85. After the line `# insert foundations metric tracking here #`
+Then add the following code to the `eval(...)` function in `model.py`. Insert these after the line `# insert foundations metric tracking here #`, which should be around line 109
 
 ```python
     # insert foundations metric tracking here #
@@ -241,13 +241,13 @@ Luckily, with very little changes to our code, you can have the power to address
 
 This can be addressed by adding a couple lines of code. We will explain what they do in a bit.
 
-First, add the following line of code to the `model.py` after line 10
+First, add the following line of code to the `model.py` after line 11
 
 ```python
 from foundations_orbit import DataContract
 ```
 
-Next, add these two lines of code to the `train(...)` function in `model.py`. This should be around line 30. Insert this after the line `# insert DataContract creation code here #`
+Next, add these two lines of code to the `train(...)` function in `model.py`. This should be around line 43. Insert this after the line `# insert DataContract creation code here #`, which should be around line 42
 ```python
     # insert DataContract creation code here #
     dc = DataContract("my_contract", x_train)
@@ -260,7 +260,7 @@ python train_driver.py
 ```
 You should be able to see in the explorer on the left hand side that a new file called "my_contract.pkl" has been created.
 
-Next, add these two lines of code to the `predict(...)` function in `model.py`. This should be around line 51. Insert this after the line `# insert DataContract validation code here #`
+Next, add these two lines of code to the `predict(...)` function in `model.py`. Insert this after the line `# insert DataContract validation code here #` which should be around line 72
 ```python
     # insert DataContract validation code here #
     dc = DataContract.load(".", "my_contract")
