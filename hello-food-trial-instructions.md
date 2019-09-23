@@ -62,12 +62,14 @@ In this trial, we are using Visual Studio Code as our code editor.
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-The code written by **Hello Food**’s Data Scientists can be viewed on this editor. You can navigate to different files using the explorer to the left. At a high level, the `model.py` file includes some code to train the model, some code to use the model for inference, and some code to calculate the performance of the model. There are three functions in `model.py`: `train`, `predict`, and `eval`. **There’s no Foundations Orbit feature in them right now.**
+Once you are in the code editor you can see the model development code written by **Hello Food**’s Data Scientists. You can navigate to different files using the explorer to the left. At a high level, the `model.py` file includes some code to train the model, some code to use the model for inference, and some code to calculate the performance of the model. There are three functions in `model.py`: `train`, `predict`, and `eval`. **There’s no Foundations Orbit feature in them right now.**
 
 <details>
   <summary>Optional reading</summary>
-
+<br>
+  
 The train function takes in two arguments: start and end dates of your training period. Given these arguments, the train function fetches the data, processes them, trains a simple random forest model, and saves the model to a specified location. 
+
 
 The predict function takes in one argument: the inference date. Given the inference date, the function pulls from database the data it needs to run prediction for the specified date, then saves the predictions back to the database.
 
@@ -156,6 +158,7 @@ You can ignore the messages that got printed out in the terminal.
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
 <br>
+  
 Orbit automatically package up the code and model into what we call a "model package", which is a microservice that can be accessed by any IT systems using REST API. The entrypoints specified in the `foundations_package_manifest.yaml` file will become API endpoints that can receive requests and response with output from/to IT systems. 
 
 
@@ -232,7 +235,7 @@ Models are trained using historical data, but changes in customer behaviours and
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-Luckily, with very little changes to our code, you can have the power to address these issues using Orbit.
+Luckily, with very little changes to our code, you can have the power to address these issues using Orbit. Now let's head back to the code editor.
 
 ### To address unexpected changes in production data
 
@@ -300,6 +303,7 @@ entrypoints:
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
   <br>
+  
   This is adding a recalibration endpoint for the model package. As we serve this model, Foundations will create a new microservice for this model with a recalibration endpoint that can be hit via API to trigger recalibration. As a user, you can define what API arguments the model microservice is expecting to successfully kickoff a recalibration job. In this example, the `train` function expects two arguments, start and end dates of the training period, and takes care of training a new model given these arguments.
 
 -------------------------------------------------------------------------------------------------------------------------
