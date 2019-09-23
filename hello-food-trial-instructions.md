@@ -366,7 +366,7 @@ Before we proceed to the final session of this trial, it'd be helpful to know th
 
 Then please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
-* Click the **Recalibrate** button of your default model, located on the right hand side of the **Model Registry** table 
+* Click the **Recalibrate** button of your default model, it's _green_
 * A modal should appear on the screen
 * Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-v3”
 * Under **Parameters**, enter the following:
