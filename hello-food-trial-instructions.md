@@ -362,7 +362,7 @@ While it is not part of this trial, the full Orbit platform also offers email an
 
 _Hint: you know that it is happening if there’s a gradual performance decline, while there isn’t any glaring issues in Data Health tab._
 
-Before we proceed to the final session of this trial, it'd be helpful to know the current date of the simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available in the charts.
+Before we proceed to the final session of this trial, it'd be helpful to know the current date of the simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available on the charts.
 
 Then please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
@@ -376,16 +376,14 @@ Then please do the following on the GUI:
   | start_date | <start_date>|
   | end_date   | <end_date>  |
 
-With `<start_date>` and `<end_date>` being the start and end of the time period that you want to recalibrate your model with. We recommend recalibrating this model with the lastest 3 months of data. You can find out the latest date by checking the latest date in the **Model Evaluation** tab
-
-For example, if the latest date in the simulated production environment is 2020-10-01. You should enter:
+With `<start_date>` and `<end_date>` being the start and end of the time period that you want to recalibrate your model with. We recommend recalibrating this model with the lastest 3 months of data. For example, if the latest date in the simulated production environment is 2020-10-01. You should enter:
 
   | Key        | Value       |
   | -----------|-------------|
   | start_date | 2020-07-01  |
   | end_date   | 2020-10-01  |
 
-* Click **Recalibrate** button
+* Then click the **Recalibrate** button
 
 **----------Recalibration will take a moment. We recommend you wait a couple of minutes then refresh.----------**
 
