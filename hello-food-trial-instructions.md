@@ -51,6 +51,7 @@ First, let's open the **code editor** on a browser using the link that we sent y
 <details>
   <summary>FAQ: Does Orbit ONLY work on specific coding environment</summary>
 <br>
+
 The answer is NO. 
 
 
