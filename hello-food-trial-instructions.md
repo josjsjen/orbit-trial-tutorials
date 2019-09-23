@@ -247,7 +247,7 @@ First, add the following line of code to the `model.py` after line 11
 from foundations_orbit import DataContract
 ```
 
-Next, add these two lines of code to the `train(...)` function in `model.py`. This should be around line 43. Insert this after the line `# insert DataContract creation code here #`, which should be around line 42
+Next, add these two lines of code to the `train(...)` function in `model.py`. Insert this after the line `# insert DataContract creation code here #`, which should be around line 42
 ```python
     # insert DataContract creation code here #
     dc = DataContract("my_contract", x_train)
