@@ -388,7 +388,7 @@ With `<start_date>` and `<end_date>` being the start and end of the time period 
 
 * Then click the **Recalibrate** button
 
-**----------Recalibration will take a moment. We recommend you wait a couple of minutes then refresh.----------**
+**----------Recalibration will take a moment. Please wait for a couple of minutes then hit refresh----------**
 
 * Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v3" if you followed our instruction)
 
