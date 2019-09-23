@@ -31,6 +31,7 @@ Let’s imagine you work at a meal-kit subscription company, called **Hello, Foo
 <details>
   <summary>  Here are some facts about the business (click to expand, no need to memorize): </summary>
 <br>
+  
 * Revenue per customer: $300 per month
 * Number of customers (as of the start of this trial): 5000
 * Monthly growth rate: 14% 
