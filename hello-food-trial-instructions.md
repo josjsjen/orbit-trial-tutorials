@@ -100,77 +100,17 @@ Let's get started.
 
 ## Lesson 1: Deploying a model
 
-Now, let’s deploy the trained model to our simulated production environment. 
+### The Challenges
 
-Orbit provides a way to seamlessly package machine learning models for production.
+Now, we are ready to put the trained model into production environment. However, it is not as simple.
 
-Copy and paste the following code in `foundations_package_manifest.yaml`, which tells Orbit to serve the `predict(...)` function from `model.py`:
+For one, putting a model into production means that it needs to be wired up with the appropriate IT systems that consume the model. For example, software developers will need to change the software in call center to programmetically fetch monthly predictions from your model, likely through some kind of API. You model is not that useful to anyone "outside of the lab" if it can't be consumed by operations. It'd be very time consuming and error-prone if you have to manually run it to generate predictiona and send the results in csv's.
 
-```yaml
-entrypoints:
-  predict:
-    module: 'model'
-    function: 'predict'
-```
+Plus, putting model in production requires that you are able to reproduce the model. But as you know, a model is just the final product of a training process that includes many moving parts evolving at different rate. Very often teams cannot re-create a model for production because they lost track of the version of code that created the model and the dependencies of the training code,  which includes configurations, hard-coded values, libraries, meta-data, artifacts, and etc.
 
-Next, In the terminal, enter this command then press ‘Enter’ key:
-```bash
-foundations orbit serve start --project_name=orbit-trial --model_name=model-v1 --project_directory=./ --env=scheduler
-```
-You can ignore the messages that got printed out in the terminal.
+### The Solution
 
-<details>
-  <summary>What does this orbit feature do? (click to expand)</summary>
-<br>
-  
-Orbit automatically package up the code and model into what we call a "model package", which is a microservice that can be accessed by any IT systems using REST API. The entrypoints specified in the `foundations_package_manifest.yaml` file will become API endpoints that can receive requests and response with output from/to IT systems. 
-
-
-Why is this important?
-* A model is the final product of a training process that includes many moving parts evolving at different rate. Very often teams cannot re-create a model for production because they lost track of the version of code that created the model and the dependencies of the training code,  which includes configurations, hard-coded values, libraries, meta-data, artifacts, and etc. **The packaging aspect of this feature ensures reproducibility of models.**
-* For a model to be useful in the day-to-day operation of a company, it needs to communicate with different IT systems. **The serving aspect of this feature essentially makes it easy to turn your model into a service that can communicate with modern technology systems via API, making it easier to put models in production**
-
--------------------------------------------------------------------------------------------------------------------------
-</details>
-
-Now please go to the GUI using the other link that we shared with you. 
-* Once you enter the GUI, you will see 1 project in the landing page
-* Click on the **orbit-trial** project
-* You will land on the **Model Management** tab, where you will see information of the model you just deployed
-
-The model has been deployed to our trial environment running on GCP.
-
-<details>
-  <summary>FAQ: Does Orbit ONLY work on specific cloud infrastructure like Google Cloud Platform?</summary>
-  <br>
-  
-  The answer is NO. **Orbit is platform agnostic**, meaning it can be configured to work on any insfrastructures that meet the needs of your team, including major cloud platforms (AWS, Azure, GCP), on-premise clusters, or a hybrid of infrastructures.
-  
--------------------------------------------------------------------------------------------------------------------------
-</details>
-
-**Congratulations, you’ve deployed your churn model!** 
-
-However, there isn't much information about how the model is doing. **How can you track the performance metrics of your model over time, and be able to monitor them easily?** Let's address that in the next session.
-
-
-## Lesson 2: Monitoring model performance using Orbit
-
-### The challenge
-Transparency of model performance is often a challenage in applied AI. Once a model is deployed, it is often very hard for people other than the original model developer to know how it is performing. Teams often end up building and scheduling ad-hoc performance reporting scripts and communicating back-and-forth with non-technical stakeholders. 
-
-### Solution
-Add the following code to the `eval(...)` function in `model.py`. Insert these after the line `# insert foundations metric tracking here #`, which should be around line 109
-
-```python
-    # insert foundations metric tracking here #
-    foundations.track_production_metrics("accuracy", {str(eval_date): accuracy})
-    foundations.track_production_metrics("roc_auc", {str(eval_date): roc_auc})
-    foundations.track_production_metrics("revenue", {str(eval_date): revenue})
-    foundations.track_production_metrics("n_active_custs", {str(eval_date): n_active_custs})
-```
-
-Copy and paste the following code in `foundations_package_manifest.yaml`:
+Orbit provides a way to seamlessly package machine learning models for production. Copy and paste the following code in `foundations_package_manifest.yaml`, which tells Orbit to serve the `predict(...)` function from `model.py`:
 
 ```yaml
 entrypoints:
@@ -182,11 +122,69 @@ entrypoints:
     function: 'eval'
 ```
 
-Next, In the terminal, enter this command then press ‘Enter’ key:
+Next, In the terminal, enter this command then press ‘Enter’ key (You can ignore the messages that got printed out in the terminal):
 ```bash
-foundations orbit serve start --project_name=orbit-trial --model_name=model-v2-with-perf-monitor --project_directory=./ --env=scheduler
+foundations orbit serve start --project_name=orbit-trial --model_name=model-lesson-1 --project_directory=./ --env=scheduler
 ```
-You can ignore the messages that got printed out in the terminal.
+The model has been deployed to our trial environment running on GCP.
+
+<details>
+  <summary>What does this orbit feature do? (click to expand)</summary>
+<br>
+  
+Orbit automatically package up the code and model into what we call a "model package", which is a microservice that can be accessed by any IT systems using REST API. The entrypoints specified in the `foundations_package_manifest.yaml` file will become API endpoints that can receive requests and response with output from/to IT systems. 
+
+
+Why is this important?
+* The packaging aspect of this feature ensures reproducibility of models
+* The serving aspect of this feature essentially makes it easy to turn your model into a service that can communicate with modern technology systems via API, making it easier to put models in production
+
+-------------------------------------------------------------------------------------------------------------------------
+</details>
+
+<details>
+  <summary>FAQ: Does Orbit ONLY work on specific cloud infrastructure like Google Cloud Platform?</summary>
+  <br>
+  
+  The answer is NO. **Orbit is platform agnostic**, meaning it can be configured to work on any insfrastructures that meet the needs of your team, including major cloud platforms (AWS, Azure, GCP), on-premise clusters, or a hybrid of infrastructures.
+  
+-------------------------------------------------------------------------------------------------------------------------
+</details>
+
+Now please go to the GUI using the other link that we shared with you. 
+* Once you enter the GUI, you will see 1 project in the landing page
+* Click on the **orbit-trial** project
+* You will land on the **Model Management** tab, where you will see information of the model you just deployed
+
+### Congradulations! You've completed this lesson!
+
+To recap.........
+
+
+## Lesson 2: Monitoring model performance using Orbit
+
+### The challenge
+So we just deployed the first version of our churn model in production. But how do you know if the model is performing well?  Are the predictions accurate? Is it creating positive impact to our business? Is it performing better month over month? or worst than we expected?
+
+**How can you track the performance metrics of your model over time, and be able to monitor them easily?** 
+
+Transparency of model performance is often a challenage in applied AI. Once a model is deployed, it is often very hard for people other than the original model developer to know how it is performing. Teams often end up building and scheduling ad-hoc performance reporting scripts and communicating back-and-forth with non-technical stakeholders. 
+
+### Solution
+
+Add the following code to the `eval(...)` function in `model.py`. Insert these after the line `# insert foundations metric tracking here #`, which should be around line 109:
+
+```python
+    # insert foundations metric tracking here #
+    foundations.track_production_metrics("accuracy", {str(eval_date): accuracy})
+    foundations.track_production_metrics("roc_auc", {str(eval_date): roc_auc})
+    foundations.track_production_metrics("revenue", {str(eval_date): revenue})
+    foundations.track_production_metrics("n_active_custs", {str(eval_date): n_active_custs})
+```
+The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal (You can ignore the messages that got printed out in the terminal):
+```bash
+foundations orbit serve start --project_name=orbit-trial --model_name=model-lesson2 --project_directory=./ --env=scheduler
+```
 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
@@ -198,18 +196,22 @@ Orbit allows you to specify custom metric calculation code and tracks the result
 </details>
 
 Now head back to the GUI:
-* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v2-with-perf-monitor")
+* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-lesson2")
 * Navigate to **Model Evaluation** tab using the side bar
 * You can see the four metrics are being tracked. These are the the metrics we called `track_production_metrics` function with earlier
 
-Again, 1 minute of trial simulates 1 month in real life. **Now, keep an eye on the model performance in the Model Evaluation tab.**
+Again, 1 minute of trial simulates 1 month in real life. **Now, keep an eye on the model performance in the Model Evaluation tab.** You should be able to see the 4 metrics being tracked over time.
 
 ### Congratulations! You've completed this lesson
+
+To recap.....
+
 
 ## Lesson 3 Monitoring production data health
 
 ### The challenge
-After a couple of minute, you are probably beginning to see that your model performance is suffering. Again, you can tell by going to Model Evaluation tab, which monitors your model performance in production over time.
+
+After a couple of minute, you are probably beginning to see that your model performance is suffering. Again, you can tell by going to the **Model Evaluation** tab, which monitors your model performance in production over time.
 
 **Now that your model performance is decaying, revenue is dropping. Do you know what is wrong? What do you do?**
 
@@ -220,12 +222,10 @@ After a couple of minute, you are probably beginning to see that your model perf
 2. If you are not technical, you can reach out to someone else to assist on the task. Is there a data scientist from your company that can spare the time from other initiatives to help you out?
 3. You can email the original model developer at a.lu@dessa.com. He will fix the issue for you. He’s quite busy on his new projects, but he will try his best to get back to you in a couple of weeks
 
-**Regardless of which option you choose, you need to act fast because your company is bleeding money now as you are reading this.**
-
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-There is a fourth option. You use Foundations Orbit to identify & resolve the issue in a few steps in the next section.
+**You need to act fast because your company is bleeding money now as you are reading this.** There is a fourth option. You use Foundations Orbit to identify & resolve the issue in a few steps.
 
 ### The solution
 
@@ -272,15 +272,14 @@ In our example, we create one data contract called "my_contract" from the traini
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal:
+The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal (You can ignore the messages that got printed out in the terminal):
 ```bash
-foundations orbit serve start --project_name=orbit-trial --model_name=model-v3 --project_directory=./ --env=scheduler
+foundations orbit serve start --project_name=orbit-trial --model_name=model-lesson3 --project_directory=./ --env=scheduler
 ```
-You can ignore the messages that got printed out in the terminal.
 
-Now you are ready to head back to the GUI. Once you are back in the GUI, you will see the new model package that you just deployed. Please do the following on the GUI:
+Now head back to the GUI and do the following:
 * Navigate to **Model Management** tab using the side bar
-* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v3" if you followed our instruction)
+* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-lesson3")
 * Navigate to **Data Health** tab using the side bar
 * Under **Select report** drop down, located on the left hand side, select a validation report from the latest date
   * First select the lastest date
@@ -295,23 +294,25 @@ Once you’ve identified which attribute is having critical issue, remember the 
 ```bash
 curl http://<user_key>:31998/simulator/fix_special_value?column_name=<attribute_name>
 ```
-Replacing `<attribute_name>` with the name of the attribute you want to report and `<user_key>` with your user_key. Make sure you do not leave the '<' and ">" in the command
+Replacing `<user_key>` with your **user_key** and `<attribute_name>` with the name of the attribute you want to report. Make sure you do not leave the '<' and ">" in the command.
 
 Once you correctly report the issue, we will fix it. You can tell it is fixed by **refreshing the Data Health** tab then checking the latest validation report and checking the latest model performance in the **Model Evaluation** tab. You should see that the model metrics start to recover.
 
-While it is not part of this trial, the full Orbit platform also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
+While it is not part of this trial, Orbit also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
 
 ### Congradulations! You've completed this lesson!
+
+To recap...
 
 ## Lesson 4: Addressing concept drift with recalibration
 
 ### The Challenge
 
-By now, you should see that your model performance has declined once again. However, there isn't any issue you can see in **Data Health**
+By now, you should see that your model performance has declined once again. However, there isn't any issue you can see in the **Data Health** tab. So we know the model is NOT decline due to broken production data.
 
-This is commonly due to concept drift. Models are trained using historical data, but changes in customer behaviours and business operations happen over time, changing the underlying relationships between model input and output. In reality, models in production degrade in performance. It is only a matter of time before they become obsolete.
+It is very common for machine learning models to suffer from concept drift. Models are trained using historical data, but changes in customer behaviours and business operations happen over time, changing the underlying relationships between model input and output. In reality, models in production degrade in performance. It is only a matter of time before they become obsolete.
 
-Data Scientists team often address this by going back to model development phase again.
+Data Scientists team often address this by going back to model development phase again, it will take a long time and resource while the model degradation is causing the company millions of dollars.
 
 ### The Solution
 
@@ -338,23 +339,22 @@ entrypoints:
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal:
+The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal (You can ignore the messages that got printed out in the terminal):
 ```bash
-foundations orbit serve start --project_name=orbit-trial --model_name=model-v2 --project_directory=./ --env=scheduler
+foundations orbit serve start --project_name=orbit-trial --model_name=model-lesson4 --project_directory=./ --env=scheduler
 ```
-You can ignore the messages that got printed out in the terminal.
 
 Now you are ready to head back to the GUI. Once you are back in the GUI, you will see the new model package that you just deployed. Please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
-* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v2" if you followed our instruction)
+* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-lesson4")
 
-Before we proceed to the final session of this trial, it'd be helpful to know the current date of the simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available on the charts.
+Before we proceed futher, it'd be helpful to know the current date of the simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available on the charts.
 
 Then please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
 * Click the **Recalibrate** button of your default model, it's _green_
 * A modal should appear on the screen
-* Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-v3”
+* Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-lesson4-v2”
 * Under **Parameters**, enter the following:
 
   | Key        | Value       |
@@ -373,27 +373,16 @@ With `<start_date>` and `<end_date>` being the start and end of the time period 
 
 _----------Recalibration will take a moment. Please wait for a couple of minutes then hit refresh----------_
 
-* Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v3" if you followed our instruction)
+* Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-lesson4-v2")
 
+There you go, you just recalibrate a deployed model with the latest data. While not part of this trial, the full Orbit platform also provides more sophisticated control on how the model can be recalibrated, including the ability to:
+* Schedule recalibration
+* Trigger recalibration based on model performance
 
-<details>
-  <summary>Additional features that are not part of this trial (click to expand)</summary>
-<br>
-
-While not part of this trial, the full Orbit platform also provides more sophisticated control on how the model can be recalibrated. Features include:
-
-* Scheduled recalibration
-* Control how much old vs new data to include
-* Performance-triggered recalibration
-* Auto-swap
-* Canary release for new models
-  
--------------------------------------------------------------------------------------------------------------------------
-</details>
-
+You can see the model performance again in **Model Evaluation**. You should be able to see the model accuracy and ROC_AUC have improved as a result, and revenue and number of active customers are starting to recover.
 
 ### Congradulations! You've completed this lesson!
-
+To recap....
 
 ## Congratulations. You’ve completed the trial.
 
