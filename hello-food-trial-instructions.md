@@ -111,8 +111,7 @@ Plus, putting model in production requires you being able to reproduce the model
 
 ### The Solution
 
-Orbit provides a way to seamlessly package machine learning models for production. Copy and paste the following code in `foundations_package_manifest.yaml`, which tells Orbit to serve the `predict(...)` function from `model.py`:
-
+Orbit provides a way to seamlessly package machine learning models for production. Copy and paste the following code in `foundations_package_manifest.yaml`:
 ```yaml
 entrypoints:
   predict:
@@ -139,6 +138,7 @@ The model has been deployed to our trial environment running on GCP.
   
 Orbit automatically package up the code and model into what we call a "model package", which is a microservice that can be accessed by any IT systems using REST API. The entrypoints specified in the `foundations_package_manifest.yaml` file will become API endpoints that can receive requests and response with output from/to IT systems. 
 
+For example, in the yaml file above we tell Orbit to create an API endpoint for this model package called "predict". Requests to this API endpoint will get passed into the predict(...) function, which Orbit will execute. 
 
 Why is this important?
 * The packaging aspect of this feature ensures reproducibility of models
