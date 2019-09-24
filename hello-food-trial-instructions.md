@@ -44,7 +44,7 @@ Let’s imagine you work at a meal-kit subscription company, called **Hello, Foo
 
 **Because the company only has limited resources to address retention, it is critical to predict correctly which customers are likely to churn**. 4 months ago, your team decided to develop a **machine learning model to predict which customers are likely to churn based on their recent behaviour so that they can be targeted for special offers.** 
 
-## Pre-requisite: Train the model using sample solution code
+## Train the model using sample code provided
 
 First, let's open the **code editor** on a browser using the link that we sent you. 
 
