@@ -196,11 +196,11 @@ Orbit allows you to specify custom metric calculation code and tracks the result
 </details>
 
 Now head back to the GUI:
+* Navigate to the **Model Management** tab
 * Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-lesson2")
 * Navigate to **Model Evaluation** tab using the side bar
-* You can see the four metrics are being tracked. These are the the metrics we called `track_production_metrics` function with earlier
 
-Again, 1 minute of trial simulates 1 month in real life. **Now, keep an eye on the model performance in the Model Evaluation tab.** You should be able to see the 4 metrics being tracked over time.
+Again, 1 minute of trial simulates 1 month in real life. **Now, keep an eye on the model performance in the Model Evaluation tab.** You should be able to see the 4 metrics that we defined earlier are being tracked over time.
 
 ### Congratulations! You've completed this lesson
 
@@ -344,7 +344,7 @@ The changes we applied above won't be effective until we deploy a new model. To 
 foundations orbit serve start --project_name=orbit-trial --model_name=model-lesson4 --project_directory=./ --env=scheduler
 ```
 
-Now you are ready to head back to the GUI. Once you are back in the GUI, you will see the new model package that you just deployed. Please do the following on the GUI:
+Now please head back to the GUI and do the following:
 * Navigate to **Model Management** tab using the side bar
 * Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-lesson4")
 
