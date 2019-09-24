@@ -124,7 +124,6 @@ entrypoints:
     module: 'model'
     function: 'train'
 ```
-_Note: Things under 'evaluate:' and "recalibrate:" are not needed for this challenge but will come in handy later. We will explain when we get there._
 
 Next, In the terminal, enter this command then press ‘Enter’ key (You can ignore the messages in the terminal):
 ```bash
