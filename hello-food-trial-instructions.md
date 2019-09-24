@@ -138,7 +138,7 @@ The model has been deployed to our trial environment running on GCP.
   
 Orbit automatically package up the code and model into what we call a "model package", which is a microservice that can be accessed by any IT systems using REST API. The entrypoints specified in the `foundations_package_manifest.yaml` file will become API endpoints that can receive requests and response with output from/to IT systems. 
 
-For example, in the yaml file above we tell Orbit to create an API endpoint for this model package called "predict". Requests to this API endpoint will get passed into the predict(...) function, which Orbit will execute. 
+For example, in the yaml file above we tell Orbit to create an API endpoint for this model package called "predict". Requests to this API endpoint will get passed into the predict(...) function, which Orbit will execute. In the file we are also defining two other API endpoints, "evaluate" and "recalibrate", we will discuss them later.
 
 Why is this important?
 * The packaging aspect of this feature ensures reproducibility of models
@@ -163,8 +163,9 @@ Now please go to the GUI using the other link that we shared with you
 
 ### Congradulations! You've completed this challenge!
 
-To recap.........
+To recap what you just achieved: you learned how to take model development code, resulting model, dependencies, package them into something reproducible and deploy it as a micro-service that can interact with modern IT systems via API. 
 
+In addition, being non-instrusive to existing data science workflow is a key focus for Orbit. No matter how you develop your model, you can use Orbit to deploy them and manage them after deployment. 
 
 ## Challenge 2: Monitoring model performance using Orbit
 
@@ -202,15 +203,14 @@ Orbit allows you to specify custom metric calculation code and tracks the result
 
 Now head back to the GUI:
 * Navigate to the **Model Management** tab
-* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v2")
+* Under **Model Registry** click the **Default** radio button for the model package that you just deployed (named "model-v2")
 * Navigate to **Model Evaluation** tab using the side bar
 
 Again, 1 minute of trial simulates 1 month in real life. **Now, keep an eye on the model performance in the Model Evaluation tab.** You should be able to see the 4 metrics that we defined earlier are being tracked over time.
 
 ### Congratulations! You've completed this challenge!
 
-To recap.....
-
+To recap what you just achieved: you learned how to define custom metrics and asked Orbit to track them for you in production. Data scientists can achieve this by adding a few lines of code. Later on, these data scientists, their managers, and other non-technical stakeholders will have visibility into the model's performance through on a dashboard, without having to go into the code.
 
 ## Challenge 3: Monitoring production data health
 
@@ -281,8 +281,8 @@ foundations orbit serve start --project_name=orbit-trial --model_name=model-v3 -
 ```
 
 Now head back to the GUI and do the following:
-* Navigate to **Model Management** tab using the side bar
-* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v3")
+* Navigate to **Model Management** tab
+* Under **Model Registry** click the **Default** radio button for the model package that you just deployed (named "model-v3")
 * Navigate to **Data Health** tab using the side bar
 * Under **Select report** drop down, located on the left hand side, select a validation report from the latest date
   * First select the lastest date
@@ -305,7 +305,8 @@ While it is not part of this trial, Orbit also offers email and slack notificati
 
 ### Congradulations! You've completed this challenge!
 
-To recap...
+To recap what you just achieved: you learned how to add data monitoring and validation for your machine learning pipeline. You achieved this by using Orbit to create an summary of the data your pipeline is expecting (called "Data Contract") and to add a "monitor" to your dataset by adding a few lines of code. Orbit automatically monitors any data issues that might cause your model to suffer and surfaces that information to you ASAP. This helps you keep a pulse on the health of your machine learning pipeline and helps you identify issues so the right parties can fix them faster.
+
 
 ## Challenge 4: Addressing concept drift with recalibration
 
@@ -358,14 +359,17 @@ As a user, you can define what API arguments the model microservice is expecting
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-* Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v4")
+* Under **Model Registry** click the **Default** radio button for the newest model package (named "model-v4")
 
 There you go, you just recalibrate a deployed model with the latest data. While not part of this trial, the full Orbit platform also provides more sophisticated control on how the model can be recalibrated, including the ability to schedule or trigger recalibration based on model performance
 
 You can see the model performance again in **Model Evaluation**. You should be able to see the model accuracy and ROC_AUC have improved as a result, and revenue and number of active customers are starting to recover.
 
 ### Congradulations! You've completed this lesson!
-To recap....
+
+To recap what you just achieved: you learned how to recalibrate your model to make it up-to-date with the latest data. This address the concept drift issue where historical relationship between model input and output changes overtime. All models suffer from this from the moment they are created.
+
+More importantly you achieved this without having to go into the code. With Orbit you can automate this process so that you maximize the benefit that you machine learning models bring.
 
 ## Congratulations. You’ve completed the trial.
 
