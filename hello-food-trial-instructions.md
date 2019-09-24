@@ -284,7 +284,7 @@ Now head back to the GUI and do the following:
 * Under **Model Registry** click the **Default** radio button for the model package that you just deployed (named "model-v3")
 * Navigate to **Data Health** tab using the side bar
 * Under **Select report** drop down, located on the left hand side, select a validation report from the latest date like so:
-<img style="float: left;" src="https://dessa.com/wp-content/uploads/2019/09/select-report.png" height="50">
+<img style="float: left;" src="https://dessa.com/wp-content/uploads/2019/09/select-report.png" height="200">
 * You should see information populated in the table to the right
 * Review information in the three tabs: **Schema Check**, **Population Shift**, and **Data Abnormality**
 * Check if any of the attributes have a `critical` status
