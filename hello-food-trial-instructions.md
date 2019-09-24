@@ -177,6 +177,11 @@ Transparency of model performance is often a challenage in applied AI. Once a mo
 
 ### Solution
 
+First, add the following line of code to the `model.py` after line 10
+```python
+import foundations
+```
+
 Add the following code to the `eval(...)` function in `model.py`. Insert these after the line `# insert foundations metric tracking here #`, which should be around line 109:
 
 ```python
