@@ -283,10 +283,8 @@ Now head back to the GUI and do the following:
 * Navigate to **Model Management** tab
 * Under **Model Registry** click the **Default** radio button for the model package that you just deployed (named "model-v3")
 * Navigate to **Data Health** tab using the side bar
-* Under **Select report** drop down, located on the left hand side, select a validation report from the latest date
-  * First select the lastest date
-  * Then click on a model (there should be just one for now)
-  * Then click on the data contract (there should be just one for now)
+* Under **Select report** drop down, located on the left hand side, select a validation report from the latest date like so:
+<img style="float: left;" src="https://dessa.com/wp-content/uploads/2019/09/select-report.png" height="50">
 * You should see information populated in the table to the right
 * Review information in the three tabs: **Schema Check**, **Population Shift**, and **Data Abnormality**
 * Check if any of the attributes have a `critical` status
