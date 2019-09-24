@@ -84,8 +84,6 @@ python train_driver.py
 ```
 You can ignore the warning messages in the terminal. Once it completes, you can see in `fitted_objects/` folder that a new model was created as a result of the training, with the name `model.pkl` unless you change the code
 
-**Again, there is no Orbit magic so far. These are the things that you normally do in a typical data science project, but simplified for illustration purpose.**
-
 Now the model is ready to be deployed and all production systems are wired up. You are getting ready to deploy the model and hopefully it will have a positive impact on the business: **lower churn, more revenue month over month**
 
 In the real life situation, the following would happen on a monthly basis:
@@ -95,13 +93,15 @@ In the real life situation, the following would happen on a monthly basis:
 
 We’ve created a simulated production environment to mimic what you would face in real life, with every 1 minute of the trial equates to 1 month in real life.
 
-Let's get started.
+**Again, there is no Orbit magic so far. These are the things that you normally do in a typical data science project, but simplified for illustration purpose.**
 
-## Lesson 1: Deploying a model
+Let's get started on this journey.
 
-### The Challenges
+## Challenge 1: Deploying a model
 
-Now, we are ready to put the trained model into production environment. However, it is not as simple.
+### The Challenge
+
+Now, we are ready to put the trained model into production environment. However, it is not that simple.
 
 For one, putting a model into production means that it needs to be wired up with the appropriate IT systems that consume the model. For example, software developers will need to change the software in call center to programmetically fetch monthly predictions from your model, likely through some kind of API. You model is not that useful to anyone "outside of the lab" if it can't be consumed by operations. It'd be very time consuming and error-prone if you have to manually run it to generate predictiona and send the results in csv's.
 
@@ -123,7 +123,7 @@ entrypoints:
 
 Next, In the terminal, enter this command then press ‘Enter’ key (You can ignore the messages that got printed out in the terminal):
 ```bash
-foundations orbit serve start --project_name=orbit-trial --model_name=model-lesson-1 --project_directory=./ --env=scheduler
+foundations orbit serve start --project_name=orbit-trial --model_name=model-v1 --project_directory=./ --env=scheduler
 ```
 The model has been deployed to our trial environment running on GCP.
 
@@ -155,14 +155,14 @@ Now please go to the GUI using the other link that we shared with you.
 * Click on the **orbit-trial** project
 * You will land on the **Model Management** tab, where you will see information of the model you just deployed
 
-### Congradulations! You've completed this lesson!
+### Congradulations! You've completed this challenge!
 
 To recap.........
 
 
-## Lesson 2: Monitoring model performance using Orbit
+## Challenge 2: Monitoring model performance using Orbit
 
-### The challenge
+### The Challenge
 So we just deployed the first version of our churn model in production. But how do you know if the model is performing well?  Are the predictions accurate? Is it creating positive impact to our business? Is it performing better month over month? or worst than we expected?
 
 **How can you track the performance metrics of your model over time, and be able to monitor them easily?** 
@@ -182,7 +182,7 @@ Add the following code to the `eval(...)` function in `model.py`. Insert these a
 ```
 The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal (You can ignore the messages that got printed out in the terminal):
 ```bash
-foundations orbit serve start --project_name=orbit-trial --model_name=model-lesson2 --project_directory=./ --env=scheduler
+foundations orbit serve start --project_name=orbit-trial --model_name=model-v2 --project_directory=./ --env=scheduler
 ```
 
 <details>
@@ -196,23 +196,21 @@ Orbit allows you to specify custom metric calculation code and tracks the result
 
 Now head back to the GUI:
 * Navigate to the **Model Management** tab
-* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-lesson2")
+* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v2")
 * Navigate to **Model Evaluation** tab using the side bar
 
 Again, 1 minute of trial simulates 1 month in real life. **Now, keep an eye on the model performance in the Model Evaluation tab.** You should be able to see the 4 metrics that we defined earlier are being tracked over time.
 
-### Congratulations! You've completed this lesson
+### Congratulations! You've completed this challenge!
 
 To recap.....
 
 
-## Lesson 3 Monitoring production data health
+## Challenge 3: Monitoring production data health
 
-### The challenge
+### The Challenge
 
-After a couple of minute, you are probably beginning to see that your model performance is suffering. Again, you can tell by going to the **Model Evaluation** tab, which monitors your model performance in production over time.
-
-**Now that your model performance is decaying, revenue is dropping. Do you know what is wrong? What do you do?**
+After a couple of minutes, you are probably beginning to see that your model performance is suffering. **Now that your model performance is decaying, revenue is dropping. Do you know what is wrong? What do you do?**
 
 <details>
   <summary>Here are three options you normally have in real-life without Orbit</summary>
@@ -226,7 +224,7 @@ After a couple of minute, you are probably beginning to see that your model perf
 
 **You need to act fast because your company is bleeding money now as you are reading this.** There is a fourth option. You use Foundations Orbit to identify & resolve the issue in a few steps.
 
-### The solution
+### The Solution
 
 First, add the following line of code to the `model.py` after line 11
 ```python
@@ -273,12 +271,12 @@ In our example, we create one data contract called "my_contract" from the traini
 
 The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal (You can ignore the messages that got printed out in the terminal):
 ```bash
-foundations orbit serve start --project_name=orbit-trial --model_name=model-lesson3 --project_directory=./ --env=scheduler
+foundations orbit serve start --project_name=orbit-trial --model_name=model-v3 --project_directory=./ --env=scheduler
 ```
 
 Now head back to the GUI and do the following:
 * Navigate to **Model Management** tab using the side bar
-* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-lesson3")
+* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v3")
 * Navigate to **Data Health** tab using the side bar
 * Under **Select report** drop down, located on the left hand side, select a validation report from the latest date
   * First select the lastest date
@@ -299,11 +297,11 @@ Once you correctly report the issue, we will fix it. You can tell it is fixed by
 
 While it is not part of this trial, Orbit also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
 
-### Congradulations! You've completed this lesson!
+### Congradulations! You've completed this challenge!
 
 To recap...
 
-## Lesson 4: Addressing concept drift with recalibration
+## Challenge 4: Addressing concept drift with recalibration
 
 ### The Challenge
 
@@ -340,20 +338,20 @@ entrypoints:
 
 The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal (You can ignore the messages that got printed out in the terminal):
 ```bash
-foundations orbit serve start --project_name=orbit-trial --model_name=model-lesson4 --project_directory=./ --env=scheduler
+foundations orbit serve start --project_name=orbit-trial --model_name=model-v4 --project_directory=./ --env=scheduler
 ```
 
 Now please head back to the GUI and do the following:
 * Navigate to **Model Management** tab using the side bar
-* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-lesson4")
+* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v4")
 
-Before we proceed futher, it'd be helpful to know the current date of the simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available on the charts.
+Before we proceed further, it'd be helpful to know the current date of the simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available on the charts.
 
 Then please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
 * Click the **Recalibrate** button of your default model, it's _green_
 * A modal should appear on the screen
-* Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-lesson4-v2”
+* Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-v4-recal”
 * Under **Parameters**, enter the following:
 
   | Key        | Value       |
@@ -372,7 +370,7 @@ With `<start_date>` and `<end_date>` being the start and end of the time period 
 
 _----------Recalibration will take a moment. Please wait for a couple of minutes then hit refresh----------_
 
-* Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-lesson4-v2")
+* Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v4-recal")
 
 There you go, you just recalibrate a deployed model with the latest data. While not part of this trial, the full Orbit platform also provides more sophisticated control on how the model can be recalibrated, including the ability to:
 * Schedule recalibration
