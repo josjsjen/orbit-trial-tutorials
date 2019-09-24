@@ -95,7 +95,7 @@ We’ve created a simulated production environment to mimic what you would face 
 
 **Again, there is no Orbit magic so far. These are the things that you normally do in a typical data science project, but simplified for illustration purpose.**
 
-Let's get started on this journey.
+**Below, we will go through a series of 4 challenges to Machine Learning Performance Management that Orbit can solve. Let's get started on this journey!**
 
 ## Challenge 1: Deploying a model
 
