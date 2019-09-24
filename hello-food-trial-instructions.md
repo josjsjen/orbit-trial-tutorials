@@ -316,28 +316,29 @@ Data Scientists team often address this by going back to model development phase
 
 ### The Solution
 
-With what we did in **Challenge 1** earlier we actually have the ability to recalibrate the model on the GUI easily. 
+With what we did in **Challenge 1** earlier we actually have the ability to recalibrate the model easily. The model package that we deployed has an entrypoint for model recalibration, which will try trigger the `train(...)` function to run and create a new model. Recall that the `train(...)` function is expecting two arguments: start and end dates of the training period. 
 
-The model package that we deployed has an entrypoint for model recalibration, which will try trigger the train(...) function to run. The train function is expecting two arguments: start and end dates of the training period. 
-
-First, we need to detemine the time range of data with which we want to recalibrate the model. Head to **Model Evaluation** tab, can you tell what's the latest date availabe?
-
-
-it'd be helpful to know the current date of the simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available on the charts.
+First, we need to detemine the time range of data with which we want to recalibrate the model:
+* Navigate to **Model Evaluation** tab
+* Identify the **latest date available** in the simulated environment. This is the `end_date` of our recalibration
+(hint: Look for the latest date available on the charts)
+* Determine the `start_date` of our recalibration
+(hint: we recommend 3 months before the `end_date`)
+* Note down `start_date` and `end_date` in the format of "yyyy-mm-dd". We will need them in a moment.
 
 Then please do the following on the GUI:
-* Navigate to **Model Management** tab using the side bar
-* Click the **Recalibrate** button of your default model, it's _green_
+* Navigate to **Model Management** tab 
+* Click the **Recalibrate** button of your default model (should be "model-v3"), it's the _green_ button on the right
 * A modal should appear on the screen
-* Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-v4-recal”
+* Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-v4”
 * Under **Parameters**, enter the following:
 
-  | Key        | Value        |
-  | -----------|--------------|
-  | start_date | yyyy-mm-dd   |
-  | end_date   | yyyy-mm-dd   |
+  | Key        | Value                      |
+  | -----------|--------------------------- |
+  | start_date | start date in yyyy-mm-dd   |
+  | end_date   | end date in yyyy-mm-dd     |
 
-With `<start_date>` and `<end_date>` being the start and end of the time period that you want to recalibrate your model with. We recommend recalibrating this model with the lastest 3 months of data. 
+With the start_date and end_date values that you noted down earlier.
 
 * Then click the **Recalibrate** button
 
@@ -354,7 +355,7 @@ _----------Recalibration will take a moment. Please wait for a couple of minutes
 </details>
 
 
-* Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v4-recal")
+* Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v4")
 
 There you go, you just recalibrate a deployed model with the latest data. While not part of this trial, the full Orbit platform also provides more sophisticated control on how the model can be recalibrated, including the ability to:
 * Schedule recalibration
