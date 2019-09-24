@@ -42,9 +42,9 @@ Let’s imagine you work at a meal-kit subscription company, called **Hello, Foo
 <hr>
 </details>
 
-**Because the company only has limited resources to address retention, it is critical to predict correctly which customers are likely to churn**. 4 months ago, your team decided to develop a **machine learning model to predict which customers are likely to churn based on their recent behaviour so that they can be targeted for special offers.** Now the model is ready to be deployed and all production systems are wired up. You are getting ready to deploy the model and hopefully it will have a positive impact on the business: **lower churn, more revenue month over month**
+**Because the company only has limited resources to address retention, it is critical to predict correctly which customers are likely to churn**. 4 months ago, your team decided to develop a **machine learning model to predict which customers are likely to churn based on their recent behaviour so that they can be targeted for special offers.** 
 
-## Step 1 of 7: Train the model using sample solution code
+## Pre-requisite: Train the model using sample solution code
 
 First, let's open the **code editor** on a browser using the link that we sent you. 
 
@@ -78,60 +78,27 @@ The eval function takes in one argument: the evaluation date. Given evaluation k
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-Now, let’s run the training code to create the model. 
-
-First, open `user_key.py` in the editor by clicking on the file in the directory explorer to the left. Replace `your_data_key_here` with your `user_key`. For example, if the `user_key` we assigned to you is `12.34.56.78`, then line 1 should be:
-```python
-data_key = "12.34.56.78"
-```
-_Note: the step above is only for the trial and has nothing to do with Orbit. This is to tell this trial to only access the dataset that has been allocated specifically for you._
-
-Next, navigate to the terminal window by clicking **Terminal** at the top bar and **New Terminal**. In the terminal window that appears in the bottom half of the editor, Enter the following command, then press the ‘Enter’ key:
+Now, let’s run the training code to create the model. Navigate to the terminal window by clicking **Terminal** at the top bar and **New Terminal**. In the terminal window that appears in the bottom half of the editor, Enter the following command, then press the ‘Enter’ key:
 ```bash
 python train_driver.py
 ```
 You can ignore the warning messages in the terminal. Once it completes, you can see in `fitted_objects/` folder that a new model was created as a result of the training, with the name `model.pkl` unless you change the code
 
-**There is no Orbit magic so far. These are the things that you normally do in a typical data science project, but simplified for illustration purpose.**
-
-## Step 2 of 7: Monitoring model performance using Orbit
-
-Now, we are ready to deploy the model into production. Before we actually do that in the next section, one thing is still missing. As soon as we deploy this model into the simulated production environment, it will start being consumed by the production environment and having impacts on the business. **How can you track the performance metrics of your model over time, and be able to monitor them easily?**
-
-With Orbit, this is as easy as adding a couple lines of code. Now, let’s add the following line of code to the `model.py` after line 10
-
-```python
-import foundations
-```
-
-Then add the following code to the `eval(...)` function in `model.py`. Insert these after the line `# insert foundations metric tracking here #`, which should be around line 109
-
-```python
-    # insert foundations metric tracking here #
-    foundations.track_production_metrics("accuracy", {str(eval_date): accuracy})
-    foundations.track_production_metrics("roc_auc", {str(eval_date): roc_auc})
-    foundations.track_production_metrics("revenue", {str(eval_date): revenue})
-    foundations.track_production_metrics("n_active_custs", {str(eval_date): n_active_custs})
-```
-
-<details>
-  <summary>What does this orbit feature do? (click to expand)</summary>
-<br>
-
-Orbit allows you to specify custom metric calculation code and tracks the resulting metrics. As we will show later, after we deploy this model, Orbit will package the code and automate the execution of these metric calculation function and the tracking of the resulting metrics, which you can visualize in the Orbit GUI. 
+**Again, there is no Orbit magic so far. These are the things that you normally do in a typical data science project, but simplified for illustration purpose.**
 
 
-In this example, we are monitoring 4 metrics. The first two are typical mathematical metrics for classification problems and the last two are business metrics for this initiative.
+Now the model is ready to be deployed and all production systems are wired up. You are getting ready to deploy the model and hopefully it will have a positive impact on the business: **lower churn, more revenue month over month**
 
-Why is this important?
+In the real life situation, the following would happen on a monthly basis:
+* Every month, the Operations team will get predictions from your model (i.e., getting from your model a list of customers the model predicts to be at risk of churning)
+* Some actions are performed by the Operations team based on the predictions (i.e., actually sending out the special offer to the customers)
+* As the results, customer behaviours are impacted and captured as data (i.e., some customers leave/stay, reflected by their records in the database)
 
-Transparency of model performance is often a challenage in applied AI. Once a model is deployed, it is often very hard for people other than the original model developer to know how it is performing. Teams often end up building and scheduling ad-hoc performance reporting scripts and communicating back-and-forth with non-technical stakeholders. Orbit makes this process painless for everyone.
+We’ve created a simulated production environment to mimic what you would face in real life, with every 1 minute of the trial equates to 1 month in real life.
 
--------------------------------------------------------------------------------------------------------------------------
-</details>
+Let's get started.
 
-
-## Step 3 of 7: Deploying the model
+## Lesson 1: Deploying a model
 
 Now, let’s deploy the trained model to our simulated production environment. 
 
@@ -144,9 +111,6 @@ entrypoints:
   predict:
     module: 'model'
     function: 'predict'
-  evaluate:
-    module: 'model'
-    function: 'eval'
 ```
 
 Next, In the terminal, enter this command then press ‘Enter’ key:
@@ -169,7 +133,12 @@ Why is this important?
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-**Congratulations, you’ve deployed your churn model!** The model has been deployed to our trial environment running on GCP.
+Now please go to the GUI using the other link that we shared with you. 
+* Once you enter the GUI, you will see 1 project in the landing page
+* Click on the **orbit-trial** project
+* You will land on the **Model Management** tab, where you will see information of the model you just deployed
+
+The model has been deployed to our trial environment running on GCP.
 
 <details>
   <summary>FAQ: Does Orbit ONLY work on specific cloud infrastructure like Google Cloud Platform?</summary>
@@ -180,69 +149,87 @@ Why is this important?
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-## Step 4 of 7: Monitoring your model using Orbit GUI
+**Congratulations, you’ve deployed your churn model!** 
 
-Now, we need to start monitoring how well our model is performing on live data. 
+However, there isn't much information about how the model is doing. **How can you track the performance metrics of your model over time, and be able to monitor them easily?** Let's address that in the next session.
 
-In the real life situation, the following would happen on a monthly basis:
-* Every month, the Operations team will get predictions from your model (i.e., getting from your model a list of customers the model predicts to be at risk of churning)
-* Some actions are performed by the Operations team based on the predictions (i.e., actually sending out the special offer to the customers)
-* As the results, customer behaviours are impacted and captured as data (i.e., some customers leave/stay, reflected by their records in the database)
 
-We’ve created a simulated production environment to mimic what you would face in real life, with every 1 minute of the trial equates to 1 month in real life.
+## Lesson 2: Monitoring model performance using Orbit
 
-Now please go to the GUI using the other link that we shared with you. Once you enter the GUI, you will see 1 project in the landing page. Please do the following
-* Click on the "orbit-trial" project
-* You will land on the **Model Management** tab, where you will see information of the model you just deployed
+### The challenge
+Transparency of model performance is often a challenage in applied AI. Once a model is deployed, it is often very hard for people other than the original model developer to know how it is performing. Teams often end up building and scheduling ad-hoc performance reporting scripts and communicating back-and-forth with non-technical stakeholders. 
+
+### Solution
+Add the following code to the `eval(...)` function in `model.py`. Insert these after the line `# insert foundations metric tracking here #`, which should be around line 109
+
+```python
+    # insert foundations metric tracking here #
+    foundations.track_production_metrics("accuracy", {str(eval_date): accuracy})
+    foundations.track_production_metrics("roc_auc", {str(eval_date): roc_auc})
+    foundations.track_production_metrics("revenue", {str(eval_date): revenue})
+    foundations.track_production_metrics("n_active_custs", {str(eval_date): n_active_custs})
+```
+
+Copy and paste the following code in `foundations_package_manifest.yaml`:
+
+```yaml
+entrypoints:
+  predict:
+    module: 'model'
+    function: 'predict'
+  evaluate:
+    module: 'model'
+    function: 'eval'
+```
+
+Next, In the terminal, enter this command then press ‘Enter’ key:
+```bash
+foundations orbit serve start --project_name=orbit-trial --model_name=model-v2-with-perf-monitor --project_directory=./ --env=scheduler
+```
+You can ignore the messages that got printed out in the terminal.
+
+<details>
+  <summary>What does this orbit feature do? (click to expand)</summary>
+<br>
+
+Orbit allows you to specify custom metric calculation code and tracks the resulting metrics. After we deploy this model, Orbit will package the code and automate the execution of these metric calculation function and the tracking of the resulting metrics, which you can visualize in the Orbit GUI. In this example, we are monitoring 4 metrics. The first two are typical mathematical metrics for classification problems and the last two are business metrics for this initiative.
+
+-------------------------------------------------------------------------------------------------------------------------
+</details>
+
+Now head back to the GUI:
+* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v2-with-perf-monitor")
 * Navigate to **Model Evaluation** tab using the side bar
 * You can see the four metrics are being tracked. These are the the metrics we called `track_production_metrics` function with earlier
 
 Again, 1 minute of trial simulates 1 month in real life. **Now, keep an eye on the model performance in the Model Evaluation tab.**
 
-At anytime, you can click the (?) button located on the top right corner to go through a quick overview of the GUI.
+### Congratulations! You've completed this lesson
 
-## The big problem
+## Lesson 3 Monitoring production data health
 
-By now, you are probably beginning to see that your model performance is suffering. You can tell by going to Model Evaluation tab, which monitors your model performance in production over time.
+### The challenge
+After a couple of minute, you are probably beginning to see that your model performance is suffering. Again, you can tell by going to Model Evaluation tab, which monitors your model performance in production over time.
 
-**Now that your model performance is decaying, revenue is dropping. Do you know what is wrong? What do you do? Here are three options you normally have in real-life** (we do not recommend actually doing these, there's a better way which we will introduce in a moment)
-1. If you are a Data Science guru, you roll up your sleeves and head to the IDE and do some investigation on the dataset. You are welcome to write some python code to identify & resolve the problem, and re-deploy your new model following the instructions in step 3
+**Now that your model performance is decaying, revenue is dropping. Do you know what is wrong? What do you do?**
+
+<details>
+  <summary>Here are three options you normally have in real-life without Orbit</summary>
+
+1. If you are a Data Science guru, you roll up your sleeves and head to the IDE and do some investigation on the dataset. You are welcome to write some python code to identify & resolve the problem, and re-deploy your new model
 2. If you are not technical, you can reach out to someone else to assist on the task. Is there a data scientist from your company that can spare the time from other initiatives to help you out?
 3. You can email the original model developer at a.lu@dessa.com. He will fix the issue for you. He’s quite busy on his new projects, but he will try his best to get back to you in a couple of weeks
 
 **Regardless of which option you choose, you need to act fast because your company is bleeding money now as you are reading this.**
 
-There is a fourth option. You use Foundations Orbit to identify & resolve the issue in a few steps in the next section.
-
-## Step 5 of 7: The Orbit way
-
-Machine learning models in production typically suffer from two types of issues: 
-
-1. **Unexpected changes in production data** 
-  <details>
-    <summary>Click to expand</summary>
-  
-  IT and operations changes can lead to unexpected data anomalies capable of adversely affecting model performance. These changes aren’t tracked by traditional IT systems, which means that teams don’t notice them until it’s too late. For example, the team that maintains the databases might not know that your model is dependent on a particular column and decided to make changes to it, such as using a different value to encode something. Small changes like that could proliferate through various data systems and eventually leads to drastic changes by the time the data reach your models
-
--------------------------------------------------------------------------------------------------------------------------
-  </details>
-
-2. **Population or concept drift** 
-<details>
-  <summary>Click to expand</summary>
-Models are trained using historical data, but changes in customer behaviours and business operations happen over time, changing the underlying relationships between model input and output. In reality, models in production degrade in performance. It is only a matter of time before they become obsolete.
-
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-Luckily, with very little changes to our code, you can have the power to address these issues using Orbit. Now let's head back to the code editor.
+There is a fourth option. You use Foundations Orbit to identify & resolve the issue in a few steps in the next section.
 
-### To address unexpected changes in production data
-
-This can be addressed by adding a couple lines of code. We will explain what they do in a bit.
+### The solution
 
 First, add the following line of code to the `model.py` after line 11
-
 ```python
 from foundations_orbit import DataContract
 ```
@@ -271,10 +258,10 @@ Next, add these two lines of code to the `predict(...)` function in `model.py`. 
   <summary>What does this orbit feature do? (click to expand)</summary>
 <br>
 
-Orbit introduces a way to monitor and validate production data for machine learning models.   
-  
-  
-A two-step process is carried out to achieve this.  
+IT and operations changes can lead to unexpected data anomalies capable of adversely affecting model performance. These changes aren’t tracked by traditional IT systems, which means that teams don’t notice them until it’s too late. For example, the team that maintains the databases might not know that your model is dependent on a particular column and decided to make changes to it, such as using a different value to encode something. Small changes like that could proliferate through various data systems and eventually leads to drastic changes by the time the data reach your models
+
+
+Orbit introduces a way to monitor and validate production data for machine learning models. A two-step process is carried out to achieve this:  
 
 First, the code we added to the train(...) function essentially creates a "data contract" object from our training dataset. This "data contract" object automatically summarizes characteristics of the training dataset (x_train), including schema and key statistics. The ".save" function stores the information into a file that we can reference in the future.
 
@@ -285,7 +272,49 @@ In our example, we create one data contract called "my_contract" from the traini
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-### To address the second type of issue
+The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal:
+```bash
+foundations orbit serve start --project_name=orbit-trial --model_name=model-v3 --project_directory=./ --env=scheduler
+```
+You can ignore the messages that got printed out in the terminal.
+
+Now you are ready to head back to the GUI. Once you are back in the GUI, you will see the new model package that you just deployed. Please do the following on the GUI:
+* Navigate to **Model Management** tab using the side bar
+* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v3" if you followed our instruction)
+* Navigate to **Data Health** tab using the side bar
+* Under **Select report** drop down, located on the left hand side, select a validation report from the latest date
+  * First select the lastest date
+  * Then click on a model (there should be just one for now)
+  * Then click on the data contract (there should be just one for now)
+* You should see information populated in the table to the right
+* Review information in the three tabs: **Schema Check**, **Population Shift**, and **Data Abnormality**
+* Check if any of the attributes have a `critical` status
+
+Once you’ve identified which attribute is having critical issue, remember the name of the attribute and report that to us by following the instructions below. **We will fix the issue for you, but only if you correctly report which attribute is having critical issue.** To report and fix the issue, navigate to the code editor, enter the following command in the terminal window
+
+```bash
+curl http://<user_key>:31998/simulator/fix_special_value?column_name=<attribute_name>
+```
+Replacing `<attribute_name>` with the name of the attribute you want to report and `<user_key>` with your user_key. Make sure you do not leave the '<' and ">" in the command
+
+Once you correctly report the issue, we will fix it. You can tell it is fixed by **refreshing the Data Health** tab then checking the latest validation report and checking the latest model performance in the **Model Evaluation** tab. You should see that the model metrics start to recover.
+
+While it is not part of this trial, the full Orbit platform also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
+
+### Congradulations! You've completed this lesson!
+
+## Lesson 4: Addressing concept drift with recalibration
+
+### The Challenge
+
+By now, you should see that your model performance has declined once again. However, there isn't any issue you can see in **Data Health**
+
+This is commonly due to concept drift. Models are trained using historical data, but changes in customer behaviours and business operations happen over time, changing the underlying relationships between model input and output. In reality, models in production degrade in performance. It is only a matter of time before they become obsolete.
+
+Data Scientists team often address this by going back to model development phase again.
+
+### The Solution
+
 Edit your `foundations_package_manifest.yaml` to the following:
 ```yaml
 entrypoints:
@@ -309,8 +338,6 @@ entrypoints:
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-### Let's deploy a new model with these fixes
-
 The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal:
 ```bash
 foundations orbit serve start --project_name=orbit-trial --model_name=model-v2 --project_directory=./ --env=scheduler
@@ -320,47 +347,6 @@ You can ignore the messages that got printed out in the terminal.
 Now you are ready to head back to the GUI. Once you are back in the GUI, you will see the new model package that you just deployed. Please do the following on the GUI:
 * Navigate to **Model Management** tab using the side bar
 * Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v2" if you followed our instruction)
-
-<details>
-  <summary>What does this orbit feature do? (click to expand)</summary>
-<br>
-
-In Orbit, each project can have multiple model packages deployed. By marking a model "Default", project owner can easily choose a model package to be the effective model when IT systems request predictions from the project through API. 
-
-
-This essentially achieves **hot-swap of machine learning model in production**. When you have a newer version of the model (e.g. because you fix some issues like we just did), you can easily make it the model that's in effect in production.
- 
--------------------------------------------------------------------------------------------------------------------------
-</details>
-
-## Step 6 of 7: Catch unexpected abnormality in production data
-
-_Hint: you know that it is happening if you observe sharp decline in your model performance and critical issues in data health. For example, if there are way too many null values for some attributes than expected._
-
-Please do the following on the GUI:
-* Navigate to **Data Health** tab using the side bar
-* Under **Select report** drop down, located on the left hand side, select a validation report from the latest date
-  * First select the lastest date
-  * Then click on a model (there should be just one for now)
-  * Then click on the data contract (there should be just one for now)
-* You should see information populated in the table to the right
-* Review information in the three tabs: **Schema Check**, **Population Shift**, and **Data Abnormality**
-* Check if any of the attributes have a `critical` status
-
-Once you’ve identified which attribute is having critical issue, remember the name of the attribute and report that to us by following the instructions below. **We will fix the issue for you, but only if you correctly report which attribute is having critical issue.** To report and fix the issue, navigate to the code editor, enter the following command in the terminal window
-
-```bash
-curl http://<user_key>:31998/simulator/fix_special_value?column_name=<attribute_name>
-```
-Replacing `<attribute_name>` with the name of the attribute you want to report and `<user_key>` with your user_key. Make sure you do not leave the '<' and ">" in the command
-
-Once you correctly report the issue, we will fix it. You can tell it is fixed by **refreshing the Data Health** tab then checking the latest validation report and checking the latest model performance in the **Model Evaluation** tab. You should see that the model metrics start to recover.
-
-While it is not part of this trial, the full Orbit platform also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
-
-## Step 7 of 7: Address population and concept drift with recalibration
-
-_Hint: you know that it is happening if there’s a performance decline, but there isn’t any glaring issues in Data Health tab._
 
 Before we proceed to the final session of this trial, it'd be helpful to know the current date of the simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available on the charts.
 
@@ -404,6 +390,9 @@ While not part of this trial, the full Orbit platform also provides more sophist
   
 -------------------------------------------------------------------------------------------------------------------------
 </details>
+
+
+### Congradulations! You've completed this lesson!
 
 
 ## Congratulations. You’ve completed the trial.
