@@ -126,7 +126,7 @@ entrypoints:
     function: 'train'
 ```
 
-Next, In the terminal, enter this command then press ‘Enter’ key (You can ignore the messages that got printed out in the terminal):
+Next, In the terminal, enter this command then press ‘Enter’ key (You can ignore the messages in the terminal):
 ```bash
 foundations orbit serve start --project_name=orbit-trial --model_name=model-v1 --project_directory=./ --env=scheduler
 ```
@@ -185,7 +185,7 @@ Add the following code to the `eval(...)` function in `model.py`. Insert these a
     foundations.track_production_metrics("revenue", {str(eval_date): revenue})
     foundations.track_production_metrics("n_active_custs", {str(eval_date): n_active_custs})
 ```
-The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal (You can ignore the messages that got printed out in the terminal):
+The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal (You can ignore the messages in the terminal):
 ```bash
 foundations orbit serve start --project_name=orbit-trial --model_name=model-v2 --project_directory=./ --env=scheduler
 ```
@@ -274,7 +274,7 @@ In our example, we create one data contract called "my_contract" from the traini
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal (You can ignore the messages that got printed out in the terminal):
+The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal (You can ignore the messages in the terminal):
 ```bash
 foundations orbit serve start --project_name=orbit-trial --model_name=model-v3 --project_directory=./ --env=scheduler
 ```
