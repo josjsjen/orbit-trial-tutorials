@@ -342,24 +342,22 @@ With the start_date and end_date values that you noted down earlier.
 
 * Then click the **Recalibrate** button
 
-_----------Recalibration will take a moment. Please wait for a couple of minutes then hit refresh----------_
-
+**----------Recalibration will take a moment. Please wait for a minute then hit refresh----------**
 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
   <br>
-  
-  This is adding a recalibration endpoint for the model package. As we serve this model, Foundations will create a new microservice for this model with a recalibration endpoint that can be hit via API to trigger recalibration. As a user, you can define what API arguments the model microservice is expecting to successfully kickoff a recalibration job. In this example, the `train` function expects two arguments, start and end dates of the training period, and takes care of training a new model given these arguments.
+
+Since our model package has a "recalibrate" entrypoint defined. Upon request from API, Orbit will execute the function specified by the entrypoint and launch a new model package one the recalibration is done.
+
+As a user, you can define what API arguments the model microservice is expecting to successfully kickoff a recalibration job. In this example, the `train` function expects two arguments, start and end dates of the training period.
 
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-
 * Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v4")
 
-There you go, you just recalibrate a deployed model with the latest data. While not part of this trial, the full Orbit platform also provides more sophisticated control on how the model can be recalibrated, including the ability to:
-* Schedule recalibration
-* Trigger recalibration based on model performance
+There you go, you just recalibrate a deployed model with the latest data. While not part of this trial, the full Orbit platform also provides more sophisticated control on how the model can be recalibrated, including the ability to schedule or trigger recalibration based on model performance
 
 You can see the model performance again in **Model Evaluation**. You should be able to see the model accuracy and ROC_AUC have improved as a result, and revenue and number of active customers are starting to recover.
 
