@@ -86,7 +86,6 @@ You can ignore the warning messages in the terminal. Once it completes, you can 
 
 **Again, there is no Orbit magic so far. These are the things that you normally do in a typical data science project, but simplified for illustration purpose.**
 
-
 Now the model is ready to be deployed and all production systems are wired up. You are getting ready to deploy the model and hopefully it will have a positive impact on the business: **lower churn, more revenue month over month**
 
 In the real life situation, the following would happen on a monthly basis:
