@@ -119,6 +119,9 @@ entrypoints:
   evaluate:
     module: 'model'
     function: 'eval'
+  recalibrate:
+    module: 'model'
+    function: 'train'
 ```
 
 Next, In the terminal, enter this command then press ‘Enter’ key (You can ignore the messages that got printed out in the terminal):
@@ -313,19 +316,31 @@ Data Scientists team often address this by going back to model development phase
 
 ### The Solution
 
-Edit your `foundations_package_manifest.yaml` to the following:
-```yaml
-entrypoints:
-  predict:
-    module: 'model'
-    function: 'predict'
-  evaluate:
-    module: 'model'
-    function: 'eval'
-  recalibrate:
-    module: 'model'
-    function: 'train'
-```
+With what we did in Challenge 1 earlier we actually have the ability to recalibrate the model on the GUI. 
+
+First, we need to detemine the time range of data with which we want to recalibrate the model. Head to **Model Evaluation** tab, can you tell what's the latest date availabe?
+
+
+it'd be helpful to know the current date of the simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available on the charts.
+
+Then please do the following on the GUI:
+* Navigate to **Model Management** tab using the side bar
+* Click the **Recalibrate** button of your default model, it's _green_
+* A modal should appear on the screen
+* Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-v4-recal”
+* Under **Parameters**, enter the following:
+
+  | Key        | Value                               |
+  | -----------|-------------------------------------|
+  | start_date | <start date in format of yyyy-mm-dd>|
+  | end_date   | <end date in format of yyyy-mm-dd>  |
+
+With `<start_date>` and `<end_date>` being the start and end of the time period that you want to recalibrate your model with. We recommend recalibrating this model with the lastest 3 months of data. 
+
+* Then click the **Recalibrate** button
+
+_----------Recalibration will take a moment. Please wait for a couple of minutes then hit refresh----------_
+
 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
@@ -336,39 +351,6 @@ entrypoints:
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal (You can ignore the messages that got printed out in the terminal):
-```bash
-foundations orbit serve start --project_name=orbit-trial --model_name=model-v4 --project_directory=./ --env=scheduler
-```
-
-Now please head back to the GUI and do the following:
-* Navigate to **Model Management** tab using the side bar
-* Under **Model Registry** click the **Default** checkbox for the model package that you just deployed (named "model-v4")
-
-Before we proceed further, it'd be helpful to know the current date of the simulated environment. You can tell by going to the **Model Evaluation** tab and look for the latest date available on the charts.
-
-Then please do the following on the GUI:
-* Navigate to **Model Management** tab using the side bar
-* Click the **Recalibrate** button of your default model, it's _green_
-* A modal should appear on the screen
-* Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-v4-recal”
-* Under **Parameters**, enter the following:
-
-  | Key        | Value       |
-  | -----------|-------------|
-  | start_date | <start_date>|
-  | end_date   | <end_date>  |
-
-With `<start_date>` and `<end_date>` being the start and end of the time period that you want to recalibrate your model with. We recommend recalibrating this model with the lastest 3 months of data. For example, if the latest date in the simulated production environment is 2020-10-01. You should enter:
-
-  | Key        | Value       |
-  | -----------|-------------|
-  | start_date | 2020-07-01  |
-  | end_date   | 2020-10-01  |
-
-* Then click the **Recalibrate** button
-
-_----------Recalibration will take a moment. Please wait for a couple of minutes then hit refresh----------_
 
 * Under **Model Registry** click the **Default** checkbox for the newest model package (named "model-v4-recal")
 
