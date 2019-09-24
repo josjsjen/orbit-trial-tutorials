@@ -105,9 +105,9 @@ We’ve created a simulated production environment to mimic what you would face 
 
 Now, we are ready to put the trained model into production environment. However, it is not that simple.
 
-For one, putting a model into production means that it needs to be wired up with the appropriate IT systems that consume the model. For example, software developers will need to change the software in call center to programmetically fetch monthly predictions from your model, likely through some kind of API. You model is not that useful to anyone "outside of the lab" if it can't be consumed by operations. It'd be very time consuming and error-prone if you have to manually run it to generate predictiona and send the results in csv's.
+For one, putting a model into production means that it needs to be wired up with the various IT systems that consume the model predictions. For example, software developers will need to change the software in call center to programmetically fetch monthly predictions from your model, likely through some kind of API. You model is not that useful to anyone "outside of the lab" if it can't be consumed by operations. It'd be very time consuming and error-prone if you have to manually run it to generate predictions and send them in csv's every time.
 
-Plus, putting model in production requires that you are able to reproduce the model. But as you know, a model is just the final product of a training process that includes many moving parts evolving at different rate. Very often teams cannot re-create a model for production because they lost track of the version of code that created the model and the dependencies of the training code,  which includes configurations, hard-coded values, libraries, meta-data, artifacts, and etc.
+Plus, putting model in production requires you being able to reproduce the model. But as you know, a model is just the final product of a training process that includes many moving parts evolving at different rate. Very often teams cannot re-create a model for production because they lost track of the version of code that created the model and the dependencies of the training code,  which includes configurations, hard-coded values, libraries, meta-data, artifacts, and etc.
 
 ### The Solution
 
@@ -125,6 +125,7 @@ entrypoints:
     module: 'model'
     function: 'train'
 ```
+_Note: Things under 'evaluate:' and "recalibrate:" are not needed for this challenge but will come in handy later. We will explain when we get there._
 
 Next, In the terminal, enter this command then press ‘Enter’ key (You can ignore the messages in the terminal):
 ```bash
@@ -155,7 +156,7 @@ Why is this important?
 -------------------------------------------------------------------------------------------------------------------------
 </details>
 
-Now please go to the GUI using the other link that we shared with you. 
+Now please go to the GUI using the other link that we shared with you
 * Once you enter the GUI, you will see 1 project in the landing page
 * Click on the **orbit-trial** project
 * You will land on the **Model Management** tab, where you will see information of the model you just deployed
