@@ -330,10 +330,10 @@ Then please do the following on the GUI:
 * Under **Model Name**, enter a name for the model that you are about to create. For example, enter “model-v4-recal”
 * Under **Parameters**, enter the following:
 
-  | Key        | Value                               |
-  | -----------|-------------------------------------|
-  | start_date | <start date in format of yyyy-mm-dd>|
-  | end_date   | <end date in format of yyyy-mm-dd>  |
+  | Key        | Value                                |
+  | -----------|------------------------------------- |
+  | start_date | <start date in format of yyyy-mm-dd> |
+  | end_date   | <end date in format of yyyy-mm-dd>   |
 
 With `<start_date>` and `<end_date>` being the start and end of the time period that you want to recalibrate your model with. We recommend recalibrating this model with the lastest 3 months of data. 
 
