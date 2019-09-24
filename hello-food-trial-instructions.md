@@ -359,15 +359,14 @@ As a user, you can define what API arguments the model microservice is expecting
 
 * Under **Model Registry** click the **Default** radio button for the newest model package (named "model-v4")
 
-There you go, you just recalibrate a deployed model with the latest data. While not part of this trial, the full Orbit platform also provides more sophisticated control on how the model can be recalibrated, including the ability to schedule or trigger recalibration based on model performance
-
 You can see the model performance again in **Model Evaluation**. You should be able to see the model accuracy and ROC_AUC have improved as a result, and revenue and number of active customers are starting to recover.
 
 ### Congradulations! You've completed this lesson!
 
 To recap what you just achieved: you learned how to recalibrate your model to make it up-to-date with the latest data. This address the concept drift issue where historical relationship between model input and output changes overtime. All models suffer from this from the moment they are created.
 
-More importantly you achieved this without having to go into the code. With Orbit you can automate this process so that you maximize the benefit that you machine learning models bring.
+More importantly you achieved this without having to go into the code. With Orbit you can automate this process so that you maximize the benefit that you machine learning models bring. While not part of this trial, Orbit also provides more sophisticated control on how the model can be recalibrated, including the ability to schedule or trigger recalibration based on model performance
+
 
 ## Congratulations. You’ve completed the trial.
 
