@@ -103,7 +103,7 @@ We’ve created a simulated production environment to mimic what you would face 
 
 ### The Challenge
 
-Now, we are ready to put the trained model into production environment. However, it is not that simple.
+Now, we are ready to put the trained model into production. However, it is not that simple.
 
 For one, putting a model into production means that it needs to be wired up with the various IT systems that consume the model predictions. For example, software developers will need to change the software in call center to programmetically fetch monthly predictions from your model, likely through some kind of API. You model is not that useful to anyone "outside of the lab" if it can't be consumed by operations. It'd be very time consuming and error-prone if you have to manually run it to generate predictions and send them in csv's every time.
 
