@@ -84,6 +84,10 @@ python train_driver.py
 ```
 You can ignore the warning messages in the terminal. Once it completes, you can see in `fitted_objects/` folder that a new model was created as a result of the training, with the name `model.pkl` unless you change the code
 
+**There is no Orbit magic so far. These are the things that you normally do in a typical data science project, but simplified for illustration purpose.**
+
+## What happen next in real life?
+
 Now the model is ready to be deployed and all production systems are wired up. You are getting ready to deploy the model and hopefully it will have a positive impact on the business: **lower churn, more revenue month over month**
 
 In the real life situation, the following would happen on a monthly basis:
@@ -92,8 +96,6 @@ In the real life situation, the following would happen on a monthly basis:
 * As the results, customer behaviours are impacted and captured as data (i.e., some customers leave/stay, reflected by their records in the database)
 
 We’ve created a simulated production environment to mimic what you would face in real life, with every 1 minute of the trial equates to 1 month in real life.
-
-**Again, there is no Orbit magic so far. These are the things that you normally do in a typical data science project, but simplified for illustration purpose.**
 
 **Below, we will go through a series of 4 challenges to Machine Learning Performance Management that Orbit can solve. Let's get started on this journey!**
 
