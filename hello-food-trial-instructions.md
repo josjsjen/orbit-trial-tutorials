@@ -8,7 +8,7 @@
 
 In this tutorial we will go through an example of what Data Science teams need to do to manage machine learning models in production. We will go through this trial in a gamified setting where you will be in control of what actions to take with the ultimate goal of solving a business problem.
 
-We’re providing you with a fully-managed environment so you can focus on understanding and solving the challenges associated with hosting live models. This trial environment provides you with
+We’re providing you with a fully-managed environment so you can focus on understanding and solving the challenges associated with managing live models. This trial environment provides you with
 * An in-browser Python IDE with popular data science & ML packages pre-installed
 * The Foundations Orbit Graphical User Interface (GUI) 
 * A tutorial with example code & data
