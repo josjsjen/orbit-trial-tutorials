@@ -385,7 +385,7 @@ More importantly you achieved this without having to go into the code. With Orbi
 * Automatically recalibrate your models with new data   
   -> This ensure the model is up-to-date without the hustle and delay from rebuilding models
 
-**In addition, Orbit has other features that address different challenges with management machine learning models once they are deployed, including:**
+**In addition, Orbit has other features that address different challenges with managing machine learning models once they are deployed, including:**
 * Audit Trail
 * A/B, canary, blue-green deploy, and out-of-time testing 
 * Notification integration with email and Slack
