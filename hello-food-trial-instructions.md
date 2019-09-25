@@ -349,7 +349,7 @@ With the start_date and end_date values that you noted down earlier.
 
 * Then click the **Recalibrate** button
 
-**----------Recalibration will take a moment. Please wait for a minute then hit refresh----------**
+**----------Recalibration will take a moment. Please wait a minute then hit refresh----------**
 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
