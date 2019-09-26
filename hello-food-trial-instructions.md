@@ -347,7 +347,7 @@ Then please do the following on the GUI:
 
 With the start_date and end_date values that you noted down earlier.
 
-* Then click the **Recalibrate** button
+* Then click the **Run Recalibration** button
 
 **----------Recalibration will take a moment. Please wait a minute then hit refresh----------**
 
