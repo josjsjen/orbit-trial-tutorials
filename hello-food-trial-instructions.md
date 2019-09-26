@@ -329,7 +329,7 @@ First, we need to determine the time range of data with which we want to recalib
 (hint: Look for the latest date available on the charts)
 * Determine the `start_date` of our recalibration
 (hint: we recommend 3 months before the `end_date`)
-* Note down `start_date` and `end_date` in the format of "yyyy-mm-dd". We will need them in a moment.
+* Note down `start_date` and `end_date` in the format of "yyyy-mm-dd". We will need them in a moment. (All metrics are logged on the first day of the month)
 
 Then please do the following on the GUI:
 * Navigate to **Model Management** tab
