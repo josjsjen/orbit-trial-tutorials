@@ -330,6 +330,7 @@ First, we need to determine the time range of data with which we want to recalib
 * Determine the `start_date` of our recalibration
 (hint: we recommend 3 months before the `end_date`)
 * Note down `start_date` and `end_date` in the format of "yyyy-mm-dd". We will need them in a moment. (All metrics are logged on the first day of the month)
+  * For example, if the latest date you can see in **Model Management** is May 2020, note down the date as 2020-05-01
 
 Then please do the following on the GUI:
 * Navigate to **Model Management** tab
