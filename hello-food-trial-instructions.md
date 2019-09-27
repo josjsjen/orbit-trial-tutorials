@@ -301,14 +301,18 @@ Now head back to the GUI and do the following:
 * Review information in the three tabs: **Schema Check**, **Population Shift**, and **Data Abnormality**
 * Check if any of the attributes have a `critical` status
 
-Once you’ve identified which attribute is having critical issue, remember the name of the attribute and report that to us by following the instructions below. **We will fix the issue for you, but only if you correctly report which attribute is having critical issue.** To report and fix the issue, navigate to the code editor, enter the following command in the terminal window
+Once you’ve identified which attribute is having critical issue, remember the name of the attribute and report that to us. To report and fix the issue, navigate to the code editor, enter the following command in the terminal window
 
 ```bash
 curl http://<user_key>:31998/simulator/fix_special_value?column_name=<attribute_name>
 ```
 Replacing `<user_key>` with your **user_key** and `<attribute_name>` with the name of the attribute you want to report. Make sure you do not leave the "<" and ">" in the command.
 
-Once you correctly report the issue, we will fix it. You can tell it is fixed by **refreshing the Data Health** tab then checking the latest validation report and model performance in the **Model Evaluation** tab. You should see that the model metrics start to recover.
+**We will fix the issue for you, but only if you correctly report which attribute is having critical issue.** This illustrates what happens in real life: teams that manage data in a large organization have to manage hundreds or more data tables and pipelines that are being updated all the time. They can not fix a data issue for your model if you can't tell them precisely what's wrong.
+
+It might take a minute before the fix becomes effective. You can tell it is fixed by either:
+* **Refreshing the Data Health** tab then checking the latest data validation results again
+* Checking model performance in the **Model Evaluation** tab. You should see that the model metrics start to recover
 
 While it is not part of this trial, Orbit also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
 
