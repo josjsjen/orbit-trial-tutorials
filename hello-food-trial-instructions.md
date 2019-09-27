@@ -15,8 +15,7 @@ We’re providing you with a fully-managed environment so you can focus on under
 * A simulated production environment
 * Free cloud compute
 
-To complete this trial, you will need 3 things that you should have received from us:
-* Your user_key
+To complete this trial, you will need 2 links that you should have received from us:
 * Link to the online code editor
 * Link to the Foundations Orbit GUI
 
