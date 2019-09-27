@@ -95,7 +95,7 @@ In a real life situation, the following would happen on a monthly basis:
 * Some actions are performed by the Operations team based on the predictions (i.e., actually sending out the special offer to the customers)
 * As the results, customer behaviours are impacted and captured as data (i.e., some customers leave/stay, reflected by their records in the database)
 
-We’ve created a simulated production environment to mimic what you would face in real life, every 1 minute of the trial equates to 1 month in "real life".
+We’ve created a simulated production environment to mimic what you would face in real life, every 30 seconds of the trial equates to 1 month in "real life".
 
 **Below, we will go through a series of 4 Machine Learning Performance Management challenges that Orbit can solve. Let's get started on this journey!**
 
@@ -213,7 +213,7 @@ Now head back to the GUI:
 * Under **Model Registry** click the **Default** radio button for the newest model package (named "model-v2")
 * Navigate to **Model Evaluation** tab using the side bar
 
-Again, 1 minute of trial simulates 1 month in real life. **Now, keep an eye on the model performance in the Model Evaluation tab.** You should be able to see that the 4 metrics that we defined earlier are being tracked over time.
+**Now, keep an eye on the model performance in the Model Evaluation tab.** You will need wait 30 seconds before the metrics start to show up. Again, 30 seconds of the trials equates 1 month in real life. You should be able to see that the 4 metrics that we defined earlier are being tracked over time.
 
 ### Congratulations! You've completed this challenge!
 
