@@ -158,7 +158,7 @@ Why is this important?
 </details>
 
 Now please go to the GUI using the other link that we shared with you
-* Once you enter the GUI, you will see 1 project in the landing page
+* Once you enter the GUI, you will see 1 project in the landing page (you might need to refresh the page if you do not see the project right away)
 * Click on the **orbit-trial** project
 * You will land on the **Model Management** tab, where you will see information about the model you just deployed
 
