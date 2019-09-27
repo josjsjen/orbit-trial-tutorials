@@ -206,7 +206,7 @@ Orbit allows you to specify custom metric calculation code and tracks the result
 
 Now head back to the GUI:
 * Navigate to the **Model Management** tab
-* Under **Model Registry** click the **Default** radio button for the model package that you just deployed (named "model-v2")
+* Under **Model Registry** click the **Default** radio button for the newest model package (named "model-v2")
 * Navigate to **Model Evaluation** tab using the side bar
 
 Again, 1 minute of trial simulates 1 month in real life. **Now, keep an eye on the model performance in the Model Evaluation tab.** You should be able to see that the 4 metrics that we defined earlier are being tracked over time.
@@ -284,7 +284,7 @@ foundations orbit serve start --project_name=orbit-trial --model_name=model-v3 -
 
 Now head back to the GUI and do the following:
 * Navigate to **Model Management** tab
-* Under **Model Registry** click the **Default** radio button for the model package that you just deployed (named "model-v3")
+* Under **Model Registry** click the **Default** radio button for the newest model package (named "model-v3")
 * Navigate to **Data Health** tab using the side bar
 * Under **Select report** drop down, located on the left hand side, select a validation report from the latest date like so:
 <img style="float: left;" src="https://dessa.com/wp-content/uploads/2019/09/select-report.png" height="200">
