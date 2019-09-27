@@ -80,6 +80,8 @@ Now, let’s run the training code to create the model. Navigate to the terminal
 ```bash
 python train_driver.py
 ```
+_If you are on Windows OS, you need to press `Ctrl` + `Shift` + `v` to paste command into terminal, instead of `Ctrl` + `v`_
+
 You can ignore the warning messages in the terminal. Once it completes, you can see in `fitted_objects/` folder that a new model was created as a result of the training, with the name `model.pkl` unless you change the code
 
 **There is no Orbit magic so far. These are the things that you normally do in a typical data science project, but simplified for illustration purpose.**
@@ -127,6 +129,8 @@ Next, In the terminal, enter the following command then press the ‘Enter’ ke
 ```bash
 foundations orbit serve start --project_name=orbit-trial --model_name=model-v1 --project_directory=./ --env=scheduler
 ```
+_If you are on Windows OS, you need to press `Ctrl` + `Shift` + `v` to paste command into terminal, instead of `Ctrl` + `v`_
+
 The model has been deployed to our trial environment running on GCP.
 
 <details>
@@ -193,6 +197,7 @@ The changes we applied above won't be effective until we deploy a new model. To 
 ```bash
 foundations orbit serve start --project_name=orbit-trial --model_name=model-v2 --project_directory=./ --env=scheduler
 ```
+_If you are on Windows OS, you need to press `Ctrl` + `Shift` + `v` to paste command into terminal, instead of `Ctrl` + `v`_
 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
@@ -250,6 +255,8 @@ In terminal, run the following command (You can ignore the warning messages in t
 ```bash
 python train_driver.py
 ```
+_If you are on Windows OS, you need to press `Ctrl` + `Shift` + `v` to paste command into terminal, instead of `Ctrl` + `v`_
+
 You should be able to see in the explorer on the left hand side that a new file called "my_contract.pkl" has been created.
 
 Next, add these two lines of code to the `predict(...)` function in `model.py`. Insert this after the line `# insert DataContract validation code here #` which should be around line 72
@@ -280,6 +287,7 @@ The changes we applied above won't be effective until we deploy a new model. To 
 ```bash
 foundations orbit serve start --project_name=orbit-trial --model_name=model-v3 --project_directory=./ --env=scheduler
 ```
+_If you are on Windows OS, you need to press `Ctrl` + `Shift` + `v` to paste command into terminal, instead of `Ctrl` + `v`_
 
 Now head back to the GUI and do the following:
 * Navigate to **Model Management** tab
