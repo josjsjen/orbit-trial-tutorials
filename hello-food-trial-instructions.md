@@ -255,7 +255,7 @@ In terminal, run the following command (You can ignore the warning messages in t
 ```bash
 python train_driver.py
 ```
-_If you are on Windows OS, you need to press `Ctrl`+`Shift`+`v` to paste command into terminal, instead of `Ctrl`+`v`_
+_If you are on Windows OS, you need to press `Shift`+`Insert` to paste command into terminal, instead of `Ctrl`+`v`_
 
 You should be able to see in the explorer on the left hand side that a new file called "my_contract.pkl" has been created.
 
