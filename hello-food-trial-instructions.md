@@ -295,8 +295,10 @@ Now head back to the GUI and do the following:
 
 Once you’ve identified which attribute is having critical issue, remember the name of the attribute and report that to us. Please enter the name of the attribute in the **Report Data Issue** box in the top right corner of the GUI, then hit the **SEND** button. 
 
-**We will fix the issue for you, but only if you correctly report which attribute is having critical issue.** It might take a minute before the fix becomes effective. You can tell it is fixed by either
-* **Refreshing the Data Health** tab then checking the latest data validation results
+**We will fix the issue for you, but only if you correctly report which attribute is having critical issue.** This illustrates what happens in real life: teams that manage data in a large organization have to manage hundreds or more data tables and pipelines that are being updated all the time. They can not fix a data issue for your model if you can't tell them precisely what's wrong.
+
+It might take a minute before the fix becomes effective. You can tell it is fixed by either:
+* **Refreshing the Data Health** tab then checking the latest data validation results again
 * Checking model performance in the **Model Evaluation** tab. You should see that the model metrics start to recover
 
 While it is not part of this trial, Orbit also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
@@ -321,13 +323,11 @@ Data Scientists team often address this by going back to model development phase
 With what we did in **Challenge 1** earlier we actually have the ability to recalibrate the model easily. The model package that we deployed has an entrypoint for model recalibration, which will try trigger the `train(...)` function to run and create a new model. Recall that the `train(...)` function is expecting two arguments: start and end dates of the training period.
 
 First, we need to determine the time range of data with which we want to recalibrate the model:
-* Navigate to **Model Evaluation** tab
-* Identify the **latest date available** in the simulated environment. This is the `end_date` of our recalibration
-(hint: Look for the latest date available on the charts)
+* Identify the **current date** in the simulated environment. This is the `end_date` of our recalibration
+(reminder: you can tell by checking the date in the top right corner of the GUI)
 * Determine the `start_date` of our recalibration
 (hint: we recommend 3 months before the `end_date`)
-* Note down `start_date` and `end_date` in the format of "yyyy-mm-dd". We will need them in a moment. (All metrics are logged on the first day of the month)
-  * For example, if the latest date you can see in **Model Management** is May 2020, note down the date as 2020-05-01
+* Note down `start_date` and `end_date` in the format of "yyyy-mm-dd". We will need them in a moment. 
 
 Then please do the following on the GUI:
 * Navigate to **Model Management** tab
@@ -340,12 +340,11 @@ Then please do the following on the GUI:
   | -----------|--------------------------- |
   | start_date | start date in yyyy-mm-dd   |
   | end_date   | end date in yyyy-mm-dd     |
-
+  
 With the start_date and end_date values that you noted down earlier.
-
 * Then click the **Run Recalibration** button
 
-**----------Recalibration will take a moment. Please wait a minute then hit refresh----------**
+**------------Recalibration will take a moment. Please wait a minute then hit refresh------------**
 
 <details>
   <summary>What does this orbit feature do? (click to expand)</summary>
