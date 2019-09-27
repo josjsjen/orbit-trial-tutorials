@@ -349,6 +349,9 @@ Then please do the following on the GUI:
   | end_date   | end date in yyyy-mm-dd     |
   
 With the start_date and end_date values that you noted down earlier.
+
+**IMPORTANT: make sure that the start_date is a date earlier than the end_date, and both values are in yyyy-mm-dd format**
+
 * Then click the **Run Recalibration** button
 
 **-----------------------------------------------------------------------------------------------------------------**
