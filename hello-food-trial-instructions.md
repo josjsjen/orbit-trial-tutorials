@@ -352,8 +352,10 @@ With the start_date and end_date values that you noted down earlier.
 * Then click the **Run Recalibration** button
 
 **------------------------------------------------------------------------------------------------------------**
+
 **Once the recalibration job is launched, it will take some time for the job to finish and the new model to be deployed.
 Please wait for 1-2 minutes then hit refresh, you should see a new model package in Model Registry**
+
 **------------------------------------------------------------------------------------------------------------**
 
 <details>
