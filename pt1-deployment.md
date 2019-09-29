@@ -72,5 +72,7 @@ Being non-instrusive to an existing data science workflow is a key focus for Orb
 If you would like to go back:
 [Overview](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/hello-food-trial-instructions.md)
 
+|Previous Challenge    |       Next Challange|
+|------|-------:|
 
 
