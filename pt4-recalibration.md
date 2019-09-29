@@ -97,9 +97,11 @@ Contact us for a demo of these additional features.
 1. We would love to hear what you think about Foundations Orbit!
 Fill out the short [post-trial survey](https://docs.google.com/forms/d/e/1FAIpQLSdStzcljw3omolukJnTFuO8-Ezyfw3EET67KfVm2Eik_nw6Cw/viewform), which will only take 1 minute.
 
-2. Try this on your own infrastructure and machine learning use cases. There are several options, contact us at
+2. We covered a lot of Orbit features in 30 minutes. You likely have many questions. Contact our team to learn more about Orbit at foundations@dessa.com 
+
+3. Try this on your own infrastructure and machine learning use cases. There are several options, contact us at
 foundations@dessa.com to learn more.
 
-3. Try out our model development platform, Foundations Atlas. This tool gives superpowers to Data Scientists so they can develop machine learning models better and faster. You download the Community Edition for free at https://www.atlas.dessa.com/
+4. Try out our model development platform, Foundations Atlas. This tool gives superpowers to Data Scientists so they can develop machine learning models better and faster. You download the Community Edition for free at https://www.atlas.dessa.com/
 
 [<<Overview](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/hello-food-trial-instructions.md) &nbsp; [<Back](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt3-data-health-monitoring.md) 
