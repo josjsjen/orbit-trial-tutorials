@@ -30,6 +30,15 @@ foundations orbit serve start --project_name=orbit-trial --model_name=model-v1 -
 ```
 _If you are on Windows OS, you need to press `Shift`+`Insert` to paste command into terminal, instead of `Ctrl`+`v`_
 
+Shortly after you press 'Enter', you can expect to see the following message:
+```
+Preparing model-v1 for serving
+Creating endpoint for model at orbit-trial/model-v1
+Waiting for model-v1 to be ready
+******
+```
+
+
 The model has been deployed to our trial environment running on GCP.
 
 <details>
