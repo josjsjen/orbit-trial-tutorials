@@ -23,7 +23,7 @@ First, add the following line of code to the `model.py` after line 11
 from foundations_orbit import DataContract
 ```
 
-Next, add these two lines of code to the `train(...)` function in `model.py`. Insert this after the line `# insert DataContract creation code here #`, which should be around line 45
+Next, add these two lines of code to the `def train(...)` function in `model.py`. Insert this after the line `# insert DataContract creation code here #`, which should be around line 45
 ```python
     # insert DataContract creation code here #
     dc = DataContract("my_contract", x_train)
@@ -38,7 +38,7 @@ _If you are on Windows OS, you need to press `Shift`+`Insert` to paste command i
 
 You should be able to see in the explorer on the left hand side that a new file called "my_contract.pkl" has been created.
 
-Next, add these two lines of code to the `predict(...)` function in `model.py`. Insert this after the line `# insert DataContract validation code here #` which should be around line 74
+Next, add these two lines of code to the `def predict(...)` function in `model.py`. Insert this after the line `# insert DataContract validation code here #` which should be around line 74
 ```python
     # insert DataContract validation code here #
     dc = DataContract.load(".", "my_contract")
