@@ -69,8 +69,7 @@ Being non-instrusive to an existing data science workflow is a key focus for Orb
 
 **Please proceed to the next challenge:** [Model Performance Monitoring](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt2-performance-monitoring.md)
 
-If you would like to go back:
-[Overview](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/hello-food-trial-instructions.md)
+[<Back](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/hello-food-trial-instructions.md)
 
 
 
