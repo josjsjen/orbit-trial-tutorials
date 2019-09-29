@@ -2,7 +2,10 @@
 
 ## The Challenge
 
-After a couple of minutes, you are probably beginning to see that your model performance is suffering. **Now that your model performance is decaying, revenue is dropping. Do you know what is wrong? What do you do?**
+After a couple of minutes, you are probably beginning to see that your model performance is suffering. Again, you can see this in the **Model Evaluation** page:
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/metrics.png" height="100">
+
+**Now that your model performance is decaying, revenue is dropping. Do you know what is wrong? What do you do?**
 
 <details>
   <summary>Here are three options you normally have in real-life without Orbit</summary>
