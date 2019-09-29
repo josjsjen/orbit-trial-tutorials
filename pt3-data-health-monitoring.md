@@ -73,7 +73,7 @@ Now head back to the GUI and do the following:
 * Under **Model Registry** click the **Default** radio button for the newest model package (named "model-v3")
 * Navigate to **Data Health** tab using the side bar
 * Under **Select report** drop down, located on the left hand side, select a validation report from the latest date like so:
-<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/select_report.gif" height="200">
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/select_report.gif" height="150">
 
 * You should see information populated in the table to the right
 * Review information in the three tabs: **Schema Check**, **Population Shift**, and **Data Abnormality**
