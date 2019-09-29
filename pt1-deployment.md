@@ -38,6 +38,12 @@ Waiting for model-v1 to be ready
 ******
 ```
 
+Once model is deplopyed successfully, you can expect to see the following message:
+```
+Model model-v1 in the project orbit-trial has started, please run:
+     foundations orbit serve stop --project_name=orbit-trial --model_name=model-v1
+if an error has occurred or you wish to stop the server
+```
 
 The model has been deployed to our trial environment running on GCP.
 
