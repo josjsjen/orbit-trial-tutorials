@@ -32,11 +32,11 @@ _If you are on Windows OS, you need to press `Shift`+`Insert` to paste command i
 
 Shortly after you press 'Enter', you can expect to see the following message:
 
-<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/waiting_msg.png" height="100">
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/waiting_msg.png" height="50">
 
 Once model is deplopyed successfully, you can expect to see the following message:
 
-<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/served_msg.png" height="100">
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/served_msg.png" height="50">
 
 The model has been deployed to our trial environment running on GCP.
 
