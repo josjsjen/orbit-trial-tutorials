@@ -71,6 +71,6 @@ Being non-instrusive to an existing data science workflow is a key focus for Orb
 
 
 | Option | Description |
-| :------| -----------:|
+| =======| ===========:|
 
 
