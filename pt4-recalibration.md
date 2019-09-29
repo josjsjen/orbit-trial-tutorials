@@ -10,7 +10,7 @@ Data Scientists team often address this by going back to model development phase
 
 ## The Solution
 
-With what we did in **Challenge 1** earlier we actually have the ability to recalibrate the model easily. The model package that we deployed has an entrypoint for model recalibration, which will try trigger the `train(...)` function to run and create a new model. Recall that the `train(...)` function is expecting two arguments: start and end dates of the training period.
+With what we did in **Challenge 1** earlier we actually have the ability to recalibrate the model easily. The model package that we deployed has an entrypoint for model recalibration, which will try trigger the `train(...)` function to run and create a new model. Recall that the `def train(...)` function is expecting two arguments: start and end dates of the training period.
 
 First, we need to determine the time range of data with which we want to recalibrate the model:
 * Identify the **current date** in the simulated environment. This is the `end_date` of our recalibration
