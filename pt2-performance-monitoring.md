@@ -23,6 +23,9 @@ Add the following code to the `def eval(...)` function in `model.py`. Insert the
     foundations.track_production_metrics("revenue", {str(eval_date): revenue})
     foundations.track_production_metrics("n_active_custs", {str(eval_date): n_active_custs})
 ```
+
+_If you are new to Python: in Python, indentation consistency is required. Generally 4 whitespaces are used for indentation and is preferred over tabs. When you copy and paste the 4 lines of code above, make sure there are 4 whitespaces in front of each line._
+
 The changes we applied above won't be effective until we deploy a new model. To do that, run this command in terminal (You can ignore the messages in the terminal):
 ```bash
 foundations orbit serve start --project_name=orbit-trial --model_name=model-v2 --project_directory=./ --env=scheduler
