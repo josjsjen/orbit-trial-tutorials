@@ -78,7 +78,7 @@ The eval function takes one argument: the evaluation date. Given evaluation date
 
 Now, let’s run the training code to create the model. Navigate to the terminal window by clicking **Terminal** at the top bar and **New Terminal**. 
 
-<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/terminal.png" height="100">
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/terminal.png" height="70">
 
 In the terminal window that appears in the bottom half of the editor, Enter the following command, then press the ‘Enter’ key:
 ```bash
