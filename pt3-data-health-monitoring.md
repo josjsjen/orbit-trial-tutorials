@@ -77,7 +77,7 @@ Now head back to the GUI and do the following:
 
 * You should see information populated in the table to the right
 * Review information in the three tabs: **Schema Check**, **Population Shift**, and **Data Abnormality**
-* Check if any of the attributes have a <img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/critical.png" height="25"> status
+* Check if any of the attributes have a <img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/critical.png" height="20"> status
 
 Once you’ve identified which attribute is having critical issue, remember the name of the attribute and report that to us. Please enter the name of the attribute in the **Report Data Issue** box in the top right corner of the GUI (as illustrated below), then hit the **SEND** button. 
 
