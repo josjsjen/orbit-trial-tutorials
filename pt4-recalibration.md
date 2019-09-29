@@ -2,7 +2,7 @@
 
 ## The Challenge
 
-By now, you should see that your model performance has declined once again (give it a minute or two, it will happen). However, there isn't any issue you can see in the **Data Health** tab. So we know the model is NOT declining due to broken production data.
+Let's first head back to the **Model Evaluation** tab. You should see that your model performance has declined once again (give it a minute or two, it will happen). However, there isn't any issue you can see in the **Data Health** tab. So we know the model is NOT declining due to broken production data.
 
 It is very common for machine learning models to suffer from concept drift. Models are trained using historical data, but changes in customer behaviours and business operations happen over time, changing the underlying relationships between model input and output. In reality, models in production degrade in performance. It is only a matter of time before they become obsolete.
 
