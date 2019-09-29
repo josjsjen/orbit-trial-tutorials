@@ -103,5 +103,5 @@ We’ve created a simulated production environment to mimic what you would face 
 3. [Data Health Monitoring](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt3-data-health-monitoring.md)
 4. [Model Recalibration](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt4-recalibration.md)
 
-**Let's get started on this journey! Please proceed to the first challenge:** [Model Deployment](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt1-deployment.md)
+**Let's get started on this journey! Please proceed to the first challenge:** [Model Deployment>](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt1-deployment.md)
 
