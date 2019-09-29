@@ -41,7 +41,7 @@ Orbit allows you to specify custom metric calculation code and tracks the result
 Now head back to the GUI:
 * Navigate to the **Model Management** tab
 * Under **Model Registry** click the **Default** radio button for the newest model package (named "model-v2")
-<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/change_default.gif" height="80">
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/change_default.gif" height="100">
 
 * Navigate to **Model Evaluation** tab using the side bar
 
