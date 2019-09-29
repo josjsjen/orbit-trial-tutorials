@@ -50,6 +50,8 @@ Now head back to the GUI:
 
 **Now, keep an eye on the model performance in the Model Evaluation tab.** You will need wait 30 seconds before the metrics start to show up. Again, 30 seconds of the trials equates 1 month in real life. You should be able to see that the 4 metrics that we defined earlier are being tracked over time.
 
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/eval_metrics.gif" height="150">
+
 ## Congratulations! You've completed this challenge!
 
 To recap what you just achieved: you learned how to define custom metrics and asked Orbit to track them for you in production. Data scientists can achieve this by adding a few lines of code. Later on, these data scientists, their managers, and other non-technical stakeholders will have visibility into the model's performance through on a dashboard, without having to go into the code.
