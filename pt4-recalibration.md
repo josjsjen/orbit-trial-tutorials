@@ -91,7 +91,7 @@ Contact us for a demo of these additional features.
 # What are the next steps?
 
 1. We would love to hear what you think about Foundations Orbit!
-Fill out the post-trial survey that we sent you. Tell us what you thought of Foundations Orbit via email or tweet us @Dessa
+Fill out the short [post-trial survey](https://docs.google.com/forms/d/e/1FAIpQLSdStzcljw3omolukJnTFuO8-Ezyfw3EET67KfVm2Eik_nw6Cw/viewform), which will only take you a minute.
 
 2. Try this on your own infrastructure and machine learning use cases. There are several options, contact us at
 foundations@dessa.com to learn more.
