@@ -76,6 +76,8 @@ Now please go to the GUI using the other link that we shared with you
 * Click on the **orbit-trial** project
 * You will land on the **Model Management** tab, where you will see information about the model you just deployed
 
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/model_details.png" height="200">
+
 ## Congratulations! You've completed this challenge!
 
 To recap what you just achieved: you learned how to take model code, a trained model, and dependencies, package them into something reproducible and deploy it as a micro-service that can interact with other systems via API.
