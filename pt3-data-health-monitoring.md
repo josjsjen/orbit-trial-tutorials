@@ -79,7 +79,9 @@ Now head back to the GUI and do the following:
 * Review information in the three tabs: **Schema Check**, **Population Shift**, and **Data Abnormality**
 * Check if any of the attributes have a `critical` status
 
-Once you’ve identified which attribute is having critical issue, remember the name of the attribute and report that to us. Please enter the name of the attribute in the **Report Data Issue** box in the top right corner of the GUI, then hit the **SEND** button. 
+Once you’ve identified which attribute is having critical issue, remember the name of the attribute and report that to us. Please enter the name of the attribute in the **Report Data Issue** box in the top right corner of the GUI (as illustrated below), then hit the **SEND** button. 
+
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/data_issue.png" height="100">
 
 **We will fix the issue for you, but only if you correctly report which attribute is having critical issue.** This illustrates what happens in real life: teams that manage data in a large organization have to manage hundreds or more data tables and pipelines that are being updated all the time. They can not fix a data issue for your model if you can't tell them precisely what's wrong.
 
