@@ -97,7 +97,19 @@ In a real life situation, the following would happen on a monthly basis:
 
 We’ve created a simulated production environment to mimic what you would face in real life, every 30 seconds of the trial equates to 1 month in "real life".
 
-**Below, we will go through a series of 4 Machine Learning Performance Management challenges that Orbit can solve. Let's get started on this journey!**
+**Below, we will go through a series of 4 Machine Learning Performance Management challenges that Orbit can solve.** 
+[1. Model Deployment](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt1-deployment.md)
+[2. Model Performance Monitoring](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt2-performance-monitoring.md)
+[3. Data Health Monitoring](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt3-data-health-monitoring.md)
+[4. Model Recalibration](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt4-recalibration.md)
+
+**Let's get started on this journey! Please proceed to the first challenge:** [Model Deployment](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt1-deployment.md)
+
+
+
+
+
+
 
 ## Challenge 1: Deploying a model
 
