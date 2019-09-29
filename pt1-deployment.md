@@ -67,7 +67,7 @@ To recap what you just achieved: you learned how to take model code, a trained m
 
 Being non-instrusive to an existing data science workflow is a key focus for Orbit. No matter how you develop your models, you can use Orbit to deploy them and manage them after deployment.
 
-[I'm an inline-style link] (https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt2-performance-monitoring.md)
+[I'm an inline-style link](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt2-performance-monitoring.md)
 
 
 
