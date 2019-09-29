@@ -14,7 +14,7 @@ With what we did in **Challenge 1** earlier we actually have the ability to reca
 
 First, we need to determine the time range of data with which we want to recalibrate the model:
 * Identify the **current date** in the simulated environment, which you can find in the top-right corner of the GUI. This is the `end_date` of our recalibration
-<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/current_date.png" height="200">
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/current_date.png" height="100">
 
 * Determine the `start_date` of our recalibration
 (hint: we recommend 3 months before the `end_date`)
