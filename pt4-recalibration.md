@@ -13,9 +13,8 @@ Data Scientists team often address this by going back to model development phase
 With what we did in **Challenge 1** earlier we actually have the ability to recalibrate the model easily. The model package that we deployed has an entrypoint for model recalibration, which will try trigger the `train(...)` function to run and create a new model. Recall that the `def train(...)` function is expecting two arguments: start and end dates of the training period.
 
 First, we need to determine the time range of data with which we want to recalibrate the model:
-* Identify the **current date** in the simulated environment. This is the `end_date` of our recalibration
-<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/tree/2.0/screenshots" height="200">
-
+* Identify the **current date** in the simulated environment, which you can find in the top-right corner of the GUI. This is the `end_date` of our recalibration
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/current_date.png" height="200">
 
 * Determine the `start_date` of our recalibration
 (hint: we recommend 3 months before the `end_date`)
