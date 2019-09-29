@@ -41,6 +41,7 @@ Orbit allows you to specify custom metric calculation code and tracks the result
 Now head back to the GUI:
 * Navigate to the **Model Management** tab
 * Under **Model Registry** click the **Default** radio button for the newest model package (named "model-v2")
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/change_default.gif" height="200">
 * Navigate to **Model Evaluation** tab using the side bar
 
 **Now, keep an eye on the model performance in the Model Evaluation tab.** You will need wait 30 seconds before the metrics start to show up. Again, 30 seconds of the trials equates 1 month in real life. You should be able to see that the 4 metrics that we defined earlier are being tracked over time.
