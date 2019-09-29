@@ -97,3 +97,5 @@ Fill out the post-trial survey that we sent you. Tell us what you thought of Fou
 foundations@dessa.com to learn more.
 
 3. Try out our model development platform, Foundations Atlas. This tool gives superpowers to Data Scientists so they can develop machine learning models better and faster. You download the Community Edition for free at https://www.atlas.dessa.com/
+
+[<<Overview](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/hello-food-trial-instructions.md) &nbsp; [<Back](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt2-performance-monitoring.md) 
