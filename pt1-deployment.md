@@ -31,19 +31,12 @@ foundations orbit serve start --project_name=orbit-trial --model_name=model-v1 -
 _If you are on Windows OS, you need to press `Shift`+`Insert` to paste command into terminal, instead of `Ctrl`+`v`_
 
 Shortly after you press 'Enter', you can expect to see the following message:
-```
-Preparing model-v1 for serving
-Creating endpoint for model at orbit-trial/model-v1
-Waiting for model-v1 to be ready
-******
-```
+
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/waiting_msg.png" height="100">
 
 Once model is deplopyed successfully, you can expect to see the following message:
-```
-Model model-v1 in the project orbit-trial has started, please run:
-     foundations orbit serve stop --project_name=orbit-trial --model_name=model-v1
-if an error has occurred or you wish to stop the server
-```
+
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/served_msg.png" height="100">
 
 The model has been deployed to our trial environment running on GCP.
 
