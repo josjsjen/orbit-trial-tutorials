@@ -36,7 +36,8 @@ With the start_date and end_date values that you noted down earlier.
 
 **IMPORTANT: make sure that the start_date is a date earlier than the end_date, and both values are in yyyy-mm-dd format**
 
-<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/recalibration.png" height="250">
+The form should look something like this after you fill out the required information:
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/recalibration.png" height="200">
 
 * Then click the **Run Recalibration** button
 
