@@ -70,7 +70,9 @@ Being non-instrusive to an existing data science workflow is a key focus for Orb
 **Please proceed to the next challenge:** [Model Performance Monitoring](https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/pt2-performance-monitoring.md)
 
 
-| Option | Description |
+| <div style="width:290px">property</div> | Description |
 | =======| ===========:|
+
+
 
 
