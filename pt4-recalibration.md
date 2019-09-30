@@ -17,7 +17,7 @@ First, we need to determine the time range of data with which we want to recalib
 <img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/current_date.png" height="100">
 
 * Determine the `start_date` of our recalibration
-(hint: we recommend 3 months before the `end_date`)
+(hint: we recommend 2 months before the `end_date`)
 * Note down `start_date` and `end_date` in the format of "yyyy-mm-dd". We will need them in a moment. 
 
 Then please do the following on the GUI:
