@@ -89,9 +89,8 @@ Once you’ve identified which attribute is having critical issue, remember the 
 
 **We will fix the issue for you, but only if you correctly report which attribute is having critical issue.** This illustrates what happens in real life: teams that manage data in a large organization have to manage hundreds or more data tables and pipelines that are being updated all the time. They can not fix a data issue for your model if you can't tell them precisely what's wrong.
 
-It might take a minute before the fix becomes effective. You can tell it is fixed by either:
-* **Refreshing the Data Health** tab then checking the latest data validation results again
-* Checking model performance in the **Model Evaluation** tab. You should see that the model metrics start to recover
+It might take a minute before the fix becomes effective. You can tell it is fixed by checking model performance in the **Model Evaluation** tab. You should see that the model metrics start to recover:
+<img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/data_issue_fixed.png" height="200">
 
 While it is not part of this trial, Orbit also offers email and slack notification features so that you can set up monitoring for data issues. The right party will get notified and start investigating right away.
 
