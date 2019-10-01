@@ -72,6 +72,7 @@ Now please go to the GUI using the other link that we shared with you
 <img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/model_details.png" height="200">
 
 As a reminder, the model is deployed on our simulated trial environment, where 30 seconds of the trial equates 1 month in real life. You can see the current date of the trial environment here:
+
 <img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/current_date.png" height="100">
 
 
