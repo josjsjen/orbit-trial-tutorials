@@ -82,7 +82,7 @@ More importantly you achieved this without having to go into the code. With Orbi
 * Automatically recalibrate your models with new data   
   -> This ensures models are kept up-to-date without the need to rebuild manually
 
-Feel free to click the <img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/reset.png" height="20"> button and go over the trial again.
+**Feel free to click the** <img style="float: left;" src="https://github.com/dessa-public/orbit-trial-tutorials/blob/2.0/screenshots/reset.png" height="20"> **button and go over the trial again.**
 
 **In addition, Orbit has other features that address different challenges with managing machine learning models once they are deployed, including:**
 * Audit Trail
